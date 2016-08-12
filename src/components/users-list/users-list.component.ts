@@ -11,9 +11,9 @@ export class UsersListComponent {
   @Input()
   users: User[];
 
-  @Output() userSelected: EventEmitter<User> = new EventEmitter<User>();
+  @Output() selected: EventEmitter<User> = new EventEmitter<User>();
 
   onSelect(user: User) {
-    this.userSelected.emit(user);
+    this.selected.emit(user);
   }
 }

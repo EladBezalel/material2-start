@@ -3,7 +3,7 @@
 </md-toolbar>
 <md-sidenav-layout class="sidenav-container">
   <md-sidenav mode="side" opened="true" class="app-sidenav">
-    <users-list [users]="users" (userSelected)="userSelected($event)" ></users-list>
+    <users-list [users]="users" (selected)="onUserSelected($event)" ></users-list>
   </md-sidenav>
   <user-details [user]="selectedUser"></user-details>
 

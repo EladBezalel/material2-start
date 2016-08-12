@@ -33,7 +33,7 @@ module.exports = {
       appendScriptTag: true
     }),
     new HtmlWebpackPlugin({
-      template: 'src/index.ejs',
+      template: 'src/index.html',
       minify: {
         collapseWhitespace: true,
         removeComments: true
