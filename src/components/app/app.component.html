@@ -1,0 +1,13 @@
+<md-toolbar color="primary">
+  Angular Material 2 - Starter App
+</md-toolbar>
+<md-sidenav-layout class="sidenav-container">
+  <md-sidenav mode="side" opened="true" class="app-sidenav">
+    <users-list [users]="users" (userSelected)="userSelected($event)" ></users-list>
+  </md-sidenav>
+  <user-details [user]="selectedUser"></user-details>
+
+  <button md-fab>
+    <md-icon class="md-24">share</md-icon>
+  </button>
+</md-sidenav-layout>

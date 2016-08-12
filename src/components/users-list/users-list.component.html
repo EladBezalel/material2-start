@@ -1,0 +1,6 @@
+<md-nav-list>
+  <md-list-item *ngFor="let user of users;trackBy:user?.name" (click)="onSelect(user)">
+    <md-icon svgIcon="avatars:{{user.avatar}}" class="avatar"></md-icon>
+    <span>{{user.name}}</span>
+  </md-list-item>
+</md-nav-list>
