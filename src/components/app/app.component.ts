@@ -1,4 +1,4 @@
-import {Component, ViewEncapsulation, OnInit, OnDestroy} from '@angular/core';
+import {Component, OnInit, OnDestroy} from '@angular/core';
 import {Subscription} from "rxjs";
 
 import {MdIconRegistry} from "@angular2-material/icon";
@@ -12,7 +12,6 @@ import {UsersService} from "../../services/users.service";
   selector: 'start-app',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.less'],
-  encapsulation: ViewEncapsulation.None,
   directives: [UsersListComponent, UserDetailsComponent],
   providers: [MdIconRegistry, UsersService]
 })

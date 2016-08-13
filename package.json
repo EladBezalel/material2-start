@@ -43,7 +43,6 @@
     "opn-cli": "^3.1.0",
     "raw-loader": "^0.5.1",
     "style-loader": "^0.13.1",
-    "svg-url-loader": "^1.1.0",
     "ts-loader": "^0.8.2",
     "typescript": "^2.0.0",
     "typings": "^1.3.2",

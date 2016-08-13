@@ -1,41 +1,33 @@
-body, html {
-  margin: 0;
-  background: #eee;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  height: 100%;
-  flex-direction: column;
-  display: flex;
-}
+.app:host {
+  &, .sidenav-container {
+    flex-direction: column;
+    display: flex;
+    flex: 1;
+  }
 
-.app,
-.sidenav-container {
-  flex-direction: column;
-  display: flex;
-  flex: 1;
-}
+  md-sidenav {
+    width: 320px;
+  }
 
-md-sidenav {
-  width: 320px;
-}
+  .avatar {
+    position: relative;
+    width: 128px;
+    height: 128px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    display: inline-block;
+    overflow: hidden;
+    margin: 0;
+    vertical-align: middle;
+    zoom: 0.70;
+    transform: translateZ(0);
+    -webkit-transform: scale(0.70);
+    -moz-transform: scale(0.70);
+  }
 
-.avatar {
-  position: relative;
-  width: 128px;
-  height: 128px;
-  border: 1px solid #ddd;
-  border-radius: 50%;
-  display: inline-block;
-  overflow: hidden;
-  margin: 0px;
-  vertical-align: middle;
-  zoom: 0.70;
-  transform: translateZ(0);
-  -webkit-transform: scale(0.70);
-  -moz-transform: scale(0.70);
-}
-
-button[md-fab] {
-  right: 20px;
-  bottom: 20px;
-  position: absolute;
+  button[md-fab] {
+    right: 20px;
+    bottom: 20px;
+    position: absolute;
+  }
 }

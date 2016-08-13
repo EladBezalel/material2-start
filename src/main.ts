@@ -1,4 +1,6 @@
+/* Import styles */
 import '@angular2-material/core/style/core.css';
+import './main.css';
 
 /* Import all required libraries */
 import 'core-js/es6';
@@ -23,12 +25,12 @@ import {MdIconModule} from '@angular2-material/icon';
     BrowserModule,
 
     /* Material 2 Modules */
+    MdCoreModule,
     MdButtonModule,
     MdToolbarModule,
     MdSidenavModule,
     MdListModule,
     MdIconModule,
-    MdCoreModule,
   ],
 
   declarations: [StartAppComponent],
