@@ -1,6 +1,6 @@
 /* Import styles */
 import '@angular2-material/core/style/core.css';
-import './main.css';
+import '!style!css!less!./main.less';
 
 /* Import all required libraries */
 import 'core-js/es6';

@@ -18,13 +18,13 @@ module.exports = {
 
   module: {
     loaders: [
-      { test: /\.ts$/, loaders: ['ts-loader', 'angular2-template-loader'], exclude: /node_modules/ },
-      { test: /\.html$/, loader: 'html-loader' },
-      { test: /\.css$/, loader: "style-loader!css-loader" },
+      { test: /\.ts$/, loaders: ['ts', 'angular2-template'], exclude: /node_modules/ },
+      { test: /\.html$/, loader: 'html' },
+      { test: /\.css$/, loader: "style!css" },
       { test: /\.less$/, loader: "raw!less" },
-      { test: /\.jpg$/, loader: "file-loader" },
-      { test: /\.svg$/, loader: "url-loader?mimetype=avatar/svg+xml" },
-      { test: /\.png$/, loader: "url-loader?mimetype=avatar/png" }
+      { test: /\.jpg$/, loader: "file" },
+      { test: /\.svg$/, loader: "url?mimetype=avatar/svg+xml" },
+      { test: /\.png$/, loader: "url?mimetype=avatar/png" }
     ]
   },
 
