@@ -7,6 +7,5 @@ import {User} from "../../models/User.model";
   styleUrls: ['user-details.component.less']
 })
 export class UserDetailsComponent {
-  @Input()
-  user: User;
+  @Input() user: User;
 }

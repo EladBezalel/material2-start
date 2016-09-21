@@ -7,8 +7,7 @@ import {User} from "../../models/User.model";
   styleUrls: ['users-list.component.less']
 })
 export class UsersListComponent {
-  @Input()
-  users: User[];
+  @Input() users: User[];
 
   @Output() selected: EventEmitter<User> = new EventEmitter<User>();
 

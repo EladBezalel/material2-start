@@ -3,26 +3,24 @@ import {Subscription} from "rxjs";
 
 import {MdIconRegistry} from "@angular2-material/icon";
 
-import {User} from "../../models/User.model";
-import {UsersListComponent} from "../users-list/users-list.component";
-import {UserDetailsComponent} from "../user-details/user-details.component";
-import {UsersService} from "../../services/users.service";
+import {User} from "./models/User.model";
+
+import {UsersService} from "./services/users.service";
 
 @Component({
-  selector: 'start-app',
-  templateUrl: 'app.component.html',
+  selector: 'app-root',
+  templateUrl: './app.component.html',
   styleUrls: ['app.component.less'],
-  directives: [UsersListComponent, UserDetailsComponent],
   providers: [MdIconRegistry, UsersService]
 })
-export class StartAppComponent implements OnInit, OnDestroy{
+export class AppComponent implements OnInit, OnDestroy{
   users: User[];
   selectedUser: User;
 
   usersWatcher: Subscription;
 
   constructor (mdIconRegistry: MdIconRegistry, private usersService: UsersService) {
-    mdIconRegistry.addSvgIconSetInNamespace('avatars', 'src/assets/avatars.svg');
+    mdIconRegistry.addSvgIconSetInNamespace('avatars', './assets/avatars.svg');
   }
 
   ngOnInit () {

@@ -1,4 +1,4 @@
-.app:host {
+:host(.app) {
   &, .sidenav-container {
     flex-direction: column;
     display: flex;
@@ -9,7 +9,7 @@
     width: 320px;
   }
 
-  .avatar {
+  /deep/ .avatar {
     position: relative;
     width: 128px;
     height: 128px;

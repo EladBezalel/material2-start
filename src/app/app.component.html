@@ -1,10 +1,11 @@
 <md-toolbar color="primary">
-  Angular Material 2 - Starter App
+  <span>Angular Material 2 - Starter App</span>
 </md-toolbar>
 <md-sidenav-layout class="sidenav-container">
   <md-sidenav mode="side" opened="true" class="app-sidenav">
     <users-list [users]="users" (selected)="onUserSelected($event)" ></users-list>
   </md-sidenav>
+
   <user-details [user]="selectedUser"></user-details>
 
   <button md-fab>
