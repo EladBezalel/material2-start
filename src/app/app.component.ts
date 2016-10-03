@@ -1,7 +1,7 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
 import {Subscription} from "rxjs";
 
-import {MdIconRegistry} from "@angular2-material/icon";
+import {MdIconRegistry} from "@angular/material/icon";
 
 import {User} from "./models/User.model";
 
