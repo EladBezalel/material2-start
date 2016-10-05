@@ -26,6 +26,7 @@
     "zone.js": "^0.6.25"
   },
   "devDependencies": {
+    "@types/node": "^6.0.42",
     "angular-cli": "1.0.0-beta.16",
     "codelyzer": "~1.0.0-beta.0",
     "concurrently": "^3.1.0",

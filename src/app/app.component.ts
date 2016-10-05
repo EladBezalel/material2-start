@@ -1,19 +1,19 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
-import {Subscription} from "rxjs";
+import {Subscription} from 'rxjs';
 
-import {MdIconRegistry} from "@angular/material/icon";
+import {MdIconRegistry} from '@angular/material/icon';
 
-import {User} from "./models/User.model";
+import {User} from './models/User.model';
 
-import {UsersService} from "./services/users.service";
+import {UsersService} from './services/users.service';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
+  templateUrl: 'app.component.html',
   styleUrls: ['app.component.less'],
   providers: [MdIconRegistry, UsersService]
 })
-export class AppComponent implements OnInit, OnDestroy{
+export class AppComponent implements OnInit, OnDestroy {
   users: User[];
   selectedUser: User;
 
@@ -34,7 +34,7 @@ export class AppComponent implements OnInit, OnDestroy{
     this.usersWatcher.unsubscribe();
   }
 
-  onUserSelected(user:User):void {
+  onUserSelected(user: User): void {
     this.selectedUser = user;
   }
 }

@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {User} from "../../models/User.model";
+import {User} from '../../models/User.model';
 
 @Component({
   selector: 'user-details',

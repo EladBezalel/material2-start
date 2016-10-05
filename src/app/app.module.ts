@@ -4,8 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import {UsersListComponent} from "./components/users-list/users-list.component";
-import {UserDetailsComponent} from "./components/user-details/user-details.component";
+
+import {UsersListComponent} from './components/users-list/users-list.component';
+import {UserDetailsComponent} from './components/user-details/user-details.component';
 
 import { MaterialModule } from '@angular/material';
 
@@ -19,7 +20,7 @@ import { MaterialModule } from '@angular/material';
     BrowserModule,
     FormsModule,
     HttpModule,
-    MaterialModule
+    MaterialModule.forRoot()
   ],
   bootstrap: [AppComponent]
 })

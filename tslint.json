@@ -9,7 +9,6 @@
       "check-space"
     ],
     "curly": true,
-    "eofline": true,
     "forin": true,
     "indent": [
       true,
@@ -92,9 +91,6 @@
       "check-separator",
       "check-type"
     ],
-
-    "directive-selector-prefix": [true, "app"],
-    "component-selector-prefix": [true, "app"],
     "directive-selector-name": [true, "camelCase"],
     "component-selector-name": [true, "kebab-case"],
     "directive-selector-type": [true, "attribute"],

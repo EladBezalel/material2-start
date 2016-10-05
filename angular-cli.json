@@ -11,7 +11,6 @@
       "index": "index.html",
       "main": "main.ts",
       "tsconfig": "tsconfig.json",
-      "prefix": "app",
       "mobile": false,
       "styles": [
         "main.less"
