@@ -1,6 +1,6 @@
 {
   "name": "material2-start",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "license": "MIT",
   "scripts": {
     "serve": "ng serve",
@@ -10,29 +10,29 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/common": "^2.0.1",
-    "@angular/compiler": "^2.0.1",
-    "@angular/core": "^2.0.1",
-    "@angular/forms": "^2.0.1",
-    "@angular/http": "^2.0.1",
+    "@angular/common": "^2.1.2",
+    "@angular/compiler": "^2.1.2",
+    "@angular/core": "^2.1.2",
+    "@angular/forms": "^2.1.2",
+    "@angular/http": "^2.1.2",
     "@angular/material": "^2.0.0-alpha.9-3",
-    "@angular/platform-browser": "^2.0.1",
-    "@angular/platform-browser-dynamic": "^2.0.1",
-    "@angular/router": "^3.0.1",
+    "@angular/platform-browser": "^2.1.2",
+    "@angular/platform-browser-dynamic": "^2.1.2",
+    "@angular/router": "^3.1.2",
     "@types/hammerjs": "^2.0.33",
     "core-js": "^2.4.1",
-    "rxjs": "^5.0.0-beta.12",
-    "ts-helpers": "^1.1.1",
-    "zone.js": "^0.6.25"
+    "rxjs": "^5.0.0-rc.2",
+    "ts-helpers": "^1.1.2",
+    "zone.js": "^0.6.26"
   },
   "devDependencies": {
-    "@types/node": "^6.0.42",
-    "angular-cli": "1.0.0-beta.16",
-    "codelyzer": "~1.0.0-beta.0",
+    "@types/node": "^6.0.46",
+    "angular-cli": "1.0.0-beta.19-3",
+    "codelyzer": "~1.0.0-beta.3",
     "concurrently": "^3.1.0",
     "opn-cli": "^3.1.0",
-    "ts-node": "1.3.0",
+    "ts-node": "1.6.1",
     "tslint": "3.15.1",
-    "typescript": "2.0.3"
+    "typescript": "2.0.7"
   }
 }
