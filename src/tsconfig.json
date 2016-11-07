@@ -4,7 +4,6 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "lib": ["es6", "dom"],
-    "mapRoot": "./",
     "module": "es6",
     "moduleResolution": "node",
     "outDir": "../dist/out-tsc",
@@ -12,6 +11,12 @@
     "target": "es5",
     "typeRoots": [
       "../node_modules/@types"
-    ]
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@angular/flex-layout": [
+        "../vendor/@angular/flex-layout"
+      ]
+    }
   }
 }
