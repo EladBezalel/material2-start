@@ -13,12 +13,21 @@ import {MdIconRegistry} from '@angular/material';
 })
 export class AppComponent implements OnInit {
   users: Observable<User[]>;
+  selectedUser: User;
 
-  constructor(mdIconRegistry: MdIconRegistry, private usersService: UsersService) {
+  constructor(mdIconRegistry: MdIconRegistry, private usersService: UsersService,) {
     mdIconRegistry.addSvgIconSetInNamespace('avatars', './assets/avatars.svg');
   }
 
   ngOnInit(): void {
-    this.users = this.usersService.loadAll();
+    this.users = this.usersService.loadAll().map(users => {
+      this.selectedUser = users[0];
+
+      return users;
+    });
+  }
+
+  onUserSelected(user: User): void {
+    this.selectedUser = user;
   }
 }

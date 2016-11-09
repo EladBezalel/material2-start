@@ -3,8 +3,8 @@
 </md-toolbar>
 <md-sidenav-layout fx-flex fx-layout="row">
   <md-sidenav mode="side" opened="true">
-    <users-list [users]="users | async"></users-list>
+    <users-list [users]="users | async" (selected)="onUserSelected($event)"></users-list>
   </md-sidenav>
 
-  <user-details [user]="users[0]" fx-flex fx-layout="column"></user-details>
+  <user-details [user]="selectedUser" fx-flex fx-layout="column"></user-details>
 </md-sidenav-layout>
