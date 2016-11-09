@@ -3,10 +3,21 @@
 </md-toolbar>
 <md-sidenav-layout fx-flex fx-layout="row">
   <md-sidenav mode="side" opened="true">
-    {{title}}
+    <md-nav-list>
+      <md-list-item>
+        <md-icon svgSrc="../assets/avatar-1.svg" class="avatar"></md-icon>
+        <span>Lia Lugo</span>
+      </md-list-item>
+      <md-list-item>
+        <md-icon svgSrc="../assets/avatar-4.svg" class="avatar"></md-icon>
+        <span>Lawrance Ray</span>
+      </md-list-item>
+    </md-nav-list>
   </md-sidenav>
 
   <div class="content" fx-flex>
-    hello!
+    <md-icon svgSrc="../assets/avatar-1.svg" class="avatar"></md-icon>
+    <h2>Lia Lugo</h2>
+    <p>Lorem Ipsum ...</p>
   </div>
 </md-sidenav-layout>
