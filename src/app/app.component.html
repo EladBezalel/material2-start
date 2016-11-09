@@ -1,3 +1,12 @@
-<h1>
-  {{title}}
-</h1>
+<md-toolbar color="primary">
+  <span>Angular Material 2 - Starter App</span>
+</md-toolbar>
+<md-sidenav-layout fx-flex fx-layout="row">
+  <md-sidenav mode="side" opened="true">
+    {{title}}
+  </md-sidenav>
+
+  <div class="content" fx-flex>
+    hello!
+  </div>
+</md-sidenav-layout>
