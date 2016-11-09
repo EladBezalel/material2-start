@@ -3,17 +3,8 @@
 </md-toolbar>
 <md-sidenav-layout fx-flex fx-layout="row">
   <md-sidenav mode="side" opened="true">
-    <md-nav-list>
-      <md-list-item *ngFor="let user of users | async;trackBy:user?.name">
-        <md-icon svgIcon="avatars:{{user.avatar}}" class="avatar"></md-icon>
-        <span>{{user.name}}</span>
-      </md-list-item>
-    </md-nav-list>
+    <users-list [users]="users | async"></users-list>
   </md-sidenav>
 
-  <div class="content" fx-flex>
-    <md-icon svgSrc="../assets/avatar-1.svg" class="avatar"></md-icon>
-    <h2>Lia Lugo</h2>
-    <p>Lorem Ipsum ...</p>
-  </div>
+  <user-details [user]="users[0]" fx-flex fx-layout="column"></user-details>
 </md-sidenav-layout>
