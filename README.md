@@ -1,22 +1,24 @@
 # Angular Material2-Start
 
-This branch contains the tutorial steps and processes used to implement the start-app shown below:
+This branch contains the tutorial steps and processes used to implement the components-demo-app shown below:
+![material-demo-ux](https://cloud.githubusercontent.com/assets/6004537/20249341/36670cf0-aa00-11e6-875e-e43731f41446.png)
 
+Based on the starter-app:
 ![material-starter-ux2](https://cloud.githubusercontent.com/assets/6004537/20150979/0e7fd3e4-a6c1-11e6-85cd-b8a14ed35897.png)
 
 Above is a snapshot of the Starter-App with a **Master-Detail** layout: showing a list of users
 (left) and a user detail view (right).
 
-~~Also shown is the user experience that will be displayed for smaller device sizes. The responsive
+Also shown is the user experience that will be displayed for smaller device sizes. The responsive
 layout reveals the **menu** button that can be used to hide the user list. And the **share** button
-can be used to show the Share bottom sheet view.~~ would be supported in future releases.
+can be used to show the Share bottom sheet view.
 
 This Starter app demonstrates how:
 
 *  Angular Material `fx-layout` and `fx-flex` options can easily configure HTML containers
 *  Angular Material components `<md-toolbar>`, `<md-nav-list>`, and `<md-icon>` can quickly provide
    a base application structure
-*  ~~Theming can be altered/configured~~
+*  Theming can be altered/configured
 
 
 This sample application is purposed as both a learning tool and a skeleton application for a typical
@@ -52,7 +54,6 @@ process:
 The illustration below shows how we planned the layout and identified the primary components that
 will be used in the Starter app:
 
-<br/>
 ![plancomponents2](https://cloud.githubusercontent.com/assets/6004537/20150970/05ae3f26-a6c1-11e6-981f-53032ae41e57.png)
 
 - - -
@@ -63,15 +64,13 @@ This tutorial assumes that you have already cloned the repository and executed t
 commands:
 
 * `npm install`
-* `npm run dev`
+* `ng serve`
 
 ###### Tutorial Layout
 
 You will notice a few files/directories within this tutorial:
 
  1. `src/app` - This is where all of your application files will be created and edited.
- 2. `src/app/components` - This folder contains some tutorial-provided services and views for you to
-    reuse.
  3. `src/assets` - This folder contains some tutorial-provided images and icons which are used by
     the application.
 
@@ -92,16 +91,15 @@ the `tutorial` branch.
 
 The available step tags (in order) are:
 
-- `step-1` == `tutorial`
-- `step-2`
-- `step-3`
-- `step-4`
-- `step-5`
-- `step-6`
-- `step-7`
-- `step-8`
-- `step-9`
-- `step-9-finished` == `master`
+- `comp-step-0` == initial setup by `angular-cli`
+- `comp-step-1` == start of `components-demo-tutorial`
+- `comp-step-2`
+- `comp-step-3`
+- `comp-step-4`
+- `comp-step-5`
+- `comp-step-6`
+- `comp-step-7` 
+- `comp-final` == `components-demo`
 
 ###### Initial Setup
 
@@ -228,23 +226,26 @@ Here we will use the wireframe planning and layout to identify the components an
   `<div>` is the container for the User **detail** view.
   
 * Add the **fx-layout** and **fx-flex** attributes to configure the container layouts and sizing aspects
-* Use `mode="side"` and `opened="true"` to lock the sidenav open on the left
+* Use `mode="side"` and `opened` to lock the sidenav open on the left
 
 `src/app/app.component.html`
 ```html
-<md-toolbar color="primary">
-  <span>Angular Material 2 - Starter App</span>
-</md-toolbar>
-<md-sidenav-layout fx-flex fx-layout="row">
-  <md-sidenav mode="side" opened="true">
-    {{title}}
-  </md-sidenav>
-
-  <div class="content" fx-flex>
-    hello!
-  </div>
-</md-sidenav-layout>
+<div fx-layout="column" fx-flex>
+  <md-toolbar color="primary">
+    <span>Angular Material 2 - Starter App</span>
+  </md-toolbar>
+  <md-sidenav-layout fx-layout="row" fx-flex>
+    <md-sidenav mode="side" opened>
+      side!
+    </md-sidenav>
+    <div class="details" fx-flex>
+      details!
+    </div>
+  </md-sidenav-layout>
+</div>
 ```
+
+Giving the sidenav a default width of `320px`
 
 `src/app/app.component.less`
 ```css
@@ -256,39 +257,147 @@ md-sidenav {
 
 ### Step #3:
 
-Here you will use hard-coded elements to confirm rendering and layout of the container child
-elements and Angular Material components.
+Here you will have a tab group that will contain the users list within a nav-list component
 
 `src/app/app.component.html`
 ```html
-<md-toolbar color="primary">
-  <span>Angular Material 2 - Starter App</span>
-</md-toolbar>
-<md-sidenav-layout fx-flex fx-layout="row">
-  <md-sidenav mode="side" opened="true">
-    <md-nav-list>
-      <md-list-item>
-        <md-icon svgSrc="../assets/avatar-1.svg" class="avatar"></md-icon>
-        <span>Lia Lugo</span>
-      </md-list-item>
-      <md-list-item>
-        <md-icon svgSrc="../assets/avatar-4.svg" class="avatar"></md-icon>
-        <span>Lawrance Ray</span>
-      </md-list-item>
-    </md-nav-list>
-  </md-sidenav>
+<div fx-layout="column" fx-flex>
+  <md-toolbar color="primary">
+    <span>Angular Material 2 - Starter App</span>
+  </md-toolbar>
+  <md-sidenav-layout fx-layout="row" fx-flex>
+    <md-sidenav mode="side" opened>
+      <md-tab-group>
+        <md-tab label="Users">
+          <md-nav-list>
+            <md-list-item *ngFor="let user of users">
+              <span>{{user.name}}</span>
+            </md-list-item>
+          </md-nav-list>
+        </md-tab>
+        <md-tab label="Settings">
+          <span>Settings</span>
+        </md-tab>
+      </md-tab-group>
+    </md-sidenav>
+    <div class="details" fx-flex>
+      details!
+    </div>
+  </md-sidenav-layout>
+</div>
+```
 
-  <div class="content" fx-flex>
-    <md-icon svgSrc="../assets/avatar-1.svg" class="avatar"></md-icon>
-    <h2>Lia Lugo</h2>
-    <p>Lorem Ipsum ...</p>
-  </div>
-</md-sidenav-layout>
+Adding users list
+
+`src/app/app.component.ts`
+```ts
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.less']
+})
+export class AppComponent {
+  users = [
+    {
+      name: 'Lia Lugo',
+      avatar: 'svg-11',
+      details: 'I love cheese, ...',
+      isAdmin: true,
+      isCool: false
+    },
+    {
+      name: 'George Duke',
+      avatar: 'svg-12',
+      details: 'Zombie ipsum ...',
+      isAdmin: false,
+      isCool: true
+    }
+    // ...
+  ];
+}
+
+```
+- - -
+
+### Step #4:
+
+Here you will use the `MdIconRegistry` service provided by Material which allows us to add a namespace for a group of svg's.
+
+`src/app/app.component.html`
+```html
+<div fx-layout="column" fx-flex>
+  <md-toolbar color="primary">
+    <span>Angular Material 2 - Starter App</span>
+  </md-toolbar>
+  <md-sidenav-layout fx-layout="row" fx-flex>
+    <md-sidenav mode="side" opened>
+      <md-tab-group>
+        <md-tab label="Users">
+          <md-nav-list>
+            <md-list-item *ngFor="let user of users">
+              <md-icon svgIcon="avatars:{{user.avatar}}" class="avatar"></md-icon>
+              <span>{{user.name}}</span>
+            </md-list-item>
+          </md-nav-list>
+        </md-tab>
+        <md-tab label="Settings">
+          <span>Settings</span>
+        </md-tab>
+      </md-tab-group>
+    </md-sidenav>
+    <div class="details" fx-flex>
+      details!
+    </div>
+  </md-sidenav-layout>
+</div>
+```
+
+By using the `addSvgIconSetInNamespace` function we provide a namespace that can be used with `md-icon` 
+and the location of that svg group.
+By that, we can have `<md-icon svgIcon="[namespace]:[id]">` and it would look the namespace and the id in it.
+
+`src/app/app.component.ts`
+```ts
+import { Component } from '@angular/core';
+import {MdIconRegistry} from '@angular/material';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.less']
+})
+export class AppComponent {
+  users = [
+    {
+      name: 'Lia Lugo',
+      avatar: 'svg-11',
+      details: 'I love cheese, ...',
+      isAdmin: true,
+      isCool: false
+    },
+    {
+      name: 'George Duke',
+      avatar: 'svg-12',
+      details: 'Zombie ipsum ...',
+      isAdmin: false,
+      isCool: true
+    }
+    // ...
+  ];
+
+  constructor(iconRegistry: MdIconRegistry) {
+    iconRegistry.addSvgIconSetInNamespace('avatars', './assets/avatars.svg');
+  }
+}
+
 ```
 
 `src/main.less`
-```css
+```ts
 @import '~@angular/material/core/theming/prebuilt/indigo-pink.css';
+@import url(~"https://fonts.googleapis.com/css?family=Material+Icons");
 @import url(~"https://fonts.googleapis.com/css?family=Roboto:400,300");
 
 html, body {
@@ -321,229 +430,158 @@ app-root {
   -webkit-transform: scale(0.70);
   -moz-transform: scale(0.70);
 }
-```
-- - -
 
-### Step #4:
-
-Here you integrate your custom, application logic.
-
-* `app.component.ts` internally loads the Users service
-* `User.model.ts` defines your user model
-* `users.service.ts` mockes your users data service
-
-`src/app/models/User.model.ts`
-```ts
-export class User {
-  name: string;
-  avatar: string;
-  details: string;
+.md-list-item {
+  height: initial!important;
 }
 ```
-
-`src/app/services/users.service.ts`
-```ts
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-
-import { User } from '../models/User.model';
-
-const USERS: User[] = [
-  {
-    name: 'Lia Lugo',
-    avatar: 'svg-1',
-    details: '...'
-  },
-  {
-    name: 'George Duke',
-    avatar: 'svg-2',
-    details: '...'
-  }, 
-  // and so on...
-];
-
-@Injectable()
-export class UsersService {
-  private _list = Observable.of(USERS);
-
-  loadAll() {
-    return this._list;
-  }
-}
-```
-
-`src/app/app.component.ts`
-```ts
-import {Component, OnInit} from '@angular/core';
-import {User} from './models/User.model';
-import {UsersService} from './services/users.service';
-import {Observable} from 'rxjs';
-
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.less'],
-  providers: [ UsersService ]
-})
-export class AppComponent implements OnInit {
-  users: Observable<User[]>;
-
-  constructor(private usersService: UsersService) {}
-
-  ngOnInit(): void {
-    this.users = this.usersService.loadAll();
-  }
-}
-```
+> **Note:** added `.avatar` class over here so it can be global for the entire app and used later in our details view,
+    - I could have had it in the `app.component` and have it on [`None Encapsulation Mode`](https://angular.io/docs/ts/latest/guide/component-styles.html#!#view-encapsulation) but i preferred it that way.
+    
+> **Note:** I override and force `.md-list-item` to take the avatar height within it.
 
 - - -
 
 ### Step #5:
 
-Here you will replace the hardcoded HTML with dynamic markup using Angular directives
-(eg `ngFor`) and `{{ }}` interpolation markup to utilize the User and App functionality we just
-imported in Step #4.
-
-* Use dynamic HTML that will be compiled and rendered by Angular
-* Register a custom icon set of 'user' avatars for the user list
+Here we will add a selected user functionality and show the selected user details in our details container
 
 `src/app/app.component.html`
 ```html
-<md-toolbar color="primary">
-  <span>Angular Material 2 - Starter App</span>
-</md-toolbar>
-<md-sidenav-layout fx-flex fx-layout="row">
-  <md-sidenav mode="side" opened="true">
-    <md-nav-list>
-      <md-list-item *ngFor="let user of users | async;trackBy:user?.name">
-        <md-icon svgIcon="avatars:{{user.avatar}}" class="avatar"></md-icon>
-        <span>{{user.name}}</span>
-      </md-list-item>
-    </md-nav-list>
-  </md-sidenav>
-
-  <div class="content" fx-flex>
-    <md-icon svgSrc="../assets/avatar-1.svg" class="avatar"></md-icon>
-    <h2>Lia Lugo</h2>
-    <p>Lorem Ipsum ...</p>
-  </div>
-</md-sidenav-layout>
+<div fx-layout="column" fx-flex>
+  <md-toolbar color="primary">
+    <span>Angular Material 2 - Starter App</span>
+  </md-toolbar>
+  <md-sidenav-layout fx-layout="row" fx-flex>
+    <md-sidenav mode="side" opened>
+      <md-tab-group>
+        <md-tab label="Users">
+          <md-nav-list>
+            <md-list-item *ngFor="let user of users" (click)="selectedUser = user">
+              <md-icon svgIcon="avatars:{{user.avatar}}" class="avatar"></md-icon>
+              <span>{{user.name}}</span>
+            </md-list-item>
+          </md-nav-list>
+        </md-tab>
+        <md-tab label="Settings">
+          <span>Settings</span>
+        </md-tab>
+      </md-tab-group>
+    </md-sidenav>
+    <div class="details" fx-flex>
+      <md-icon svgIcon="avatars:{{selectedUser.avatar}}" class="avatar"></md-icon>
+      <h2>{{selectedUser.name}}</h2>
+      <p>{{selectedUser.details}}</p>
+    </div>
+  </md-sidenav-layout>
+</div>
 ```
-> **Note:** The `async` pipe is automatically subscribes for changes at the `users` property and unsubscribes when the element
- is destroyed
+
+Using the first user from the users list for the initial state
 
 `src/app/app.component.ts`
 ```ts
-import {Component, OnInit} from '@angular/core';
-import {User} from './models/User.model';
-import {UsersService} from './services/users.service';
-import {Observable} from 'rxjs';
-
+import { Component } from '@angular/core';
 import {MdIconRegistry} from '@angular/material';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.less'],
-  providers: [ UsersService, MdIconRegistry ]
+  styleUrls: ['./app.component.less']
 })
-export class AppComponent implements OnInit {
-  users: Observable<User[]>;
+export class AppComponent {
+  users = [
+    {
+      name: 'Lia Lugo',
+      avatar: 'svg-11',
+      details: 'I love cheese, ...',
+      isAdmin: true,
+      isCool: false
+    },
+    {
+      name: 'George Duke',
+      avatar: 'svg-12',
+      details: 'Zombie ipsum ...',
+      isAdmin: false,
+      isCool: true
+    }
+    // ...
+  ];
 
-  constructor(mdIconRegistry: MdIconRegistry, private usersService: UsersService) {
-    mdIconRegistry.addSvgIconSetInNamespace('avatars', './assets/avatars.svg');
-  }
+  selectedUser = {};
 
-  ngOnInit(): void {
-    this.users = this.usersService.loadAll();
+  constructor(iconRegistry: MdIconRegistry) {
+    iconRegistry.addSvgIconSetInNamespace('avatars', './assets/avatars.svg');
+
+    this.selectedUser = this.users[0];
   }
 }
+
 ```
 
 - - -
 
-### ~~Step #6:~~
+### Step #6:
 
-~~Here you will add responsive breakpoints so the application layout will adapt to different device
-display sizes~~
+Here we will use `md-slide-toggle` that depend on the `hammerjs` framework.
 
-Will be supported in future releases.
+We need to include this in our `app.module.ts` file so material can use it.
 
-- - -
+Hammerjs handles all the user interactions and gestures for material and simplifies the api.
 
-### Step #7:
-
-Here you will refactor your HTML and code to create the `<users-list>` and `<user-details>` components.
-
-#### users-list
-`src/app/components/users-list/users-list.component.ts`
-```ts
-import {Component, Input} from '@angular/core';
-import {User} from '../../models/User.model';
-
-@Component({
-  selector: 'users-list',
-  templateUrl: 'users-list.component.html',
-  styleUrls: ['users-list.component.less']
-})
-export class UsersListComponent {
-  @Input() users: User[];
-}
-```
-
-`src/app/components/users-list/users-list.component.html`
+`src/app/app.component.html`
 ```html
-<md-nav-list>
-  <md-list-item *ngFor="let user of users;trackBy:user?.name">
-    <md-icon svgIcon="avatars:{{user.avatar}}" class="avatar"></md-icon>
-    <span>{{user.name}}</span>
-  </md-list-item>
-</md-nav-list>
+<div fx-layout="column" fx-flex>
+  <md-toolbar color="primary">
+    <span>Angular Material 2 - Starter App</span>
+  </md-toolbar>
+  <md-sidenav-layout fx-layout="row" fx-flex>
+    <md-sidenav mode="side" opened>
+      <md-tab-group>
+        <md-tab label="Users">
+          <md-nav-list>
+            <md-list-item *ngFor="let user of users" (click)="selectedUser = user">
+              <md-icon svgIcon="avatars:{{user.avatar}}" class="avatar"></md-icon>
+              <span>{{user.name}}</span>
+            </md-list-item>
+          </md-nav-list>
+        </md-tab>
+        <md-tab label="Settings">
+          <span>Settings</span>
+        </md-tab>
+      </md-tab-group>
+    </md-sidenav>
+    <div class="details" fx-flex fx-layout="column" fx-layout.gt-sm="row">
+      <md-card fx-flex="80">
+        <md-icon svgIcon="avatars:{{selectedUser.avatar}}" class="avatar"></md-icon>
+        <h2>{{selectedUser.name}}</h2>
+        <p>{{selectedUser.details}}</p>
+      </md-card>
+      <md-card fx-flex>
+        <md-slide-toggle [(ngModel)]="selectedUser.isAdmin">Admin?</md-slide-toggle>
+        <md-slide-toggle [(ngModel)]="selectedUser.isCool">Coooool??</md-slide-toggle>
+      </md-card>
+    </div>
+  </md-sidenav-layout>
+</div>
 ```
+> **Note:** We use `fx-layout.gt-sm="row"` which tells this container to be a row container when the screen is greater
+than the `sm` breakpoint (`960px`)
 
-`src/app/components/users-list/users-list.component.less`
+Adding `8px` margin for cards
+
+`src/app/app.component.less`
 ```css
-:host {
-  /deep/ md-nav-list md-list-item .md-list-item {
-    height: initial;
-  }
-}
+ md-sidenav {
+   width: 320px;
+ }
+ 
+ md-card {
+   margin: 8px;
+ }
 ```
 
-#### user-details
-`src/app/components/user-details/user-details.component.ts`
-```ts
-import {Component, Input} from '@angular/core';
-import {User} from '../../models/User.model';
-
-@Component({
-  selector: 'user-details',
-  templateUrl: 'user-details.component.html',
-  styleUrls: ['user-details.component.less']
-})
-export class UserDetailsComponent {
-  @Input() user: User;
-}
-```
-
-`src/app/components/user-details/user-details.component.html`
-```html
-<md-icon svgIcon="avatars:{{user?.avatar}}" class="avatar"></md-icon>
-<h2>{{user?.name}}</h2>
-<p>{{user?.details}}</p>
-```
-
-`src/app/components/user-details/user-details.component.less`
-```css
-:host {
-  padding: 10px 40px;
-}
-```
-- - -
-
-### Step #8:
-
-Here you use the components you created above
+Including `hammerjs` dependency
 
 `src/app/app.module.ts`
 ```ts
@@ -553,17 +591,15 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { UsersListComponent } from './components/users-list/users-list.component';
-import { UserDetailsComponent } from './components/user-details/user-details.component';
 
 import { MaterialModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
+import 'hammerjs';
+
 @NgModule({
   declarations: [
-    AppComponent,
-    UsersListComponent,
-    UserDetailsComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -575,118 +611,169 @@ import { FlexLayoutModule } from '@angular/flex-layout';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
 ```
+- - -
+
+### Step #7:
+
+Add themes with the [theming mixins](https://github.com/angular/material2/blob/master/docs/theming.md) provided by material
+
+`src/themes.scss`
+```scss
+@import '~@angular/material/core/theming/all-theme';
+
+@include md-core();
+
+$primary: md-palette($md-red);
+$accent: md-palette($md-blue);
+
+$theme: md-light-theme($primary, $accent);
+
+@include angular-material-theme($theme);
+```
+
+Telling angular-cli to also compile the themes file, because angular-cli uses webpack,
+It has a built-in plugin to compile scss for us, so all we have to do is include it in the styles section
+
+`angular-cli.json`
+```json
+{
+  "apps": [
+    {
+      "styles": [
+        "main.less",
+        "themes.scss"
+      ]
+    }
+  ]
+}
+```
+- - -
+
+### Step #8 - final:
+
+Adding a dark theme and a menu with a button to toggle the theme 
+
+`src/themes.scss`
+```scss
+@import '~@angular/material/core/theming/all-theme';
+
+@include md-core();
+
+$primary: md-palette($md-red);
+$accent: md-palette($md-blue);
+
+$theme: md-light-theme($primary, $accent);
+
+@include angular-material-theme($theme);
+
+.dark-theme {
+  $dark-primary: md-palette($md-purple);
+  $dark-accent: md-palette($md-green);
+
+  $dark-theme: md-dark-theme($dark-primary, $dark-accent);
+
+  @include angular-material-theme($dark-theme);
+}
+```
+
+Notice that we have a button with `[md-menu-trigger-for]` attribute that points what menu to open,
+By setting the value `menu` for that attribute, we find an element with that name
+which happens to be `<md-menu #menu>`, and by clicking the trigger element, the menu would be opened
 
 `src/app/app.component.html`
 ```html
-<md-toolbar color="primary">
-  <span>Angular Material 2 - Starter App</span>
-</md-toolbar>
-<md-sidenav-layout fx-flex fx-layout="row">
-  <md-sidenav mode="side" opened="true">
-    <users-list [users]="users | async"></users-list>
-  </md-sidenav>
-
-  <user-details [user]="users[0]" fx-flex fx-layout="column"></user-details>
-</md-sidenav-layout>
+<div fx-layout="column" fx-flex [class.dark-theme]="isDarkTheme">
+  <md-toolbar color="primary">
+    <div fx-layout="row" fx-flex fx-layout-align="space-between">
+      <span>Angular Material 2 - Starter App</span>
+      <button md-icon-button [md-menu-trigger-for]="menu">
+        <md-icon>more_vert</md-icon>
+      </button>
+    </div>
+  </md-toolbar>
+  <md-menu #menu x-position="before">
+    <button md-menu-item (click)="isDarkTheme = !isDarkTheme">Dark Theme</button>
+  </md-menu>
+  <md-sidenav-layout fx-layout="row" fx-flex>
+    <md-sidenav mode="side" opened>
+      <md-tab-group>
+        <md-tab label="Users">
+          <md-nav-list>
+            <md-list-item *ngFor="let user of users" (click)="selectedUser = user">
+              <md-icon svgIcon="avatars:{{user.avatar}}" class="avatar"></md-icon>
+              <span>{{user.name}}</span>
+            </md-list-item>
+          </md-nav-list>
+        </md-tab>
+        <md-tab label="Settings">
+          <span>Settings</span>
+        </md-tab>
+      </md-tab-group>
+    </md-sidenav>
+    <div class="details" fx-flex fx-layout="column" fx-layout.gt-sm="row">
+      <md-card fx-flex="80">
+        <md-icon svgIcon="avatars:{{selectedUser.avatar}}" class="avatar"></md-icon>
+        <h2>{{selectedUser.name}}</h2>
+        <p>{{selectedUser.details}}</p>
+      </md-card>
+      <md-card fx-flex>
+        <md-slide-toggle [(ngModel)]="selectedUser.isAdmin">Admin?</md-slide-toggle>
+        <md-slide-toggle [(ngModel)]="selectedUser.isCool">Coooool??</md-slide-toggle>
+      </md-card>
+    </div>
+  </md-sidenav-layout>
+</div>
 ```
 
-> **Note:** We passed `users[0]` to `user-details` in the next step we're going to support the user selection
-
-- - -
-
-### Step #9:
-
-Here you make a selected user functionallity that will change the user `user-details` gets.
+Adding dark theme default value to be false
 
 `src/app/app.component.ts`
 ```ts
-import {Component, OnInit} from '@angular/core';
-import {User} from './models/User.model';
-import {UsersService} from './services/users.service';
-import {Observable} from 'rxjs';
-
+import { Component } from '@angular/core';
 import {MdIconRegistry} from '@angular/material';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.less'],
-  providers: [ UsersService, MdIconRegistry ]
+  styleUrls: ['./app.component.less']
 })
-export class AppComponent implements OnInit {
-  users: Observable<User[]>;
-  selectedUser: User;
+export class AppComponent {
+  users = [
+    {
+      name: 'Lia Lugo',
+      avatar: 'svg-11',
+      details: 'I love cheese, ...',
+      isAdmin: true,
+      isCool: false
+    },
+    {
+      name: 'George Duke',
+      avatar: 'svg-12',
+      details: 'Zombie ipsum ...',
+      isAdmin: false,
+      isCool: true
+    }
+    // ...
+  ];
 
-  constructor(mdIconRegistry: MdIconRegistry, private usersService: UsersService,) {
-    mdIconRegistry.addSvgIconSetInNamespace('avatars', './assets/avatars.svg');
-  }
+  selectedUser = {};
 
-  ngOnInit(): void {
-    this.users = this.usersService.loadAll().map(users => {
-      this.selectedUser = users[0];
+  isDarkTheme = false;
 
-      return users;
-    });
-  }
+  constructor(iconRegistry: MdIconRegistry) {
+    iconRegistry.addSvgIconSetInNamespace('avatars', './assets/avatars.svg');
 
-  onUserSelected(user: User): void {
-    this.selectedUser = user;
-  }
-}
-```
-> **Note:** We added a `selectedUser` property and initialize it when the users loaded
-
-Creating an EventEmitter so we can emit that a user was selected
-`src/app/components/users-list/users-list.component.ts`
-```ts
-import {Component, Input, Output, EventEmitter} from '@angular/core';
-import {User} from '../../models/User.model';
-
-@Component({
-  selector: 'users-list',
-  templateUrl: 'users-list.component.html',
-  styleUrls: ['users-list.component.less']
-})
-export class UsersListComponent {
-  @Input() users: User[];
-
-  @Output() selected: EventEmitter<User> = new EventEmitter<User>();
-
-  onSelect(user: User) {
-    this.selected.emit(user);
+    this.selectedUser = this.users[0];
   }
 }
 ```
 
-`src/app/components/users-list/users-list.component.html`
-```html
-<md-nav-list>
-  <md-list-item *ngFor="let user of users;trackBy:user?.name"
-                (click)="onSelect(user)">
-    <md-icon svgIcon="avatars:{{user.avatar}}" class="avatar"></md-icon>
-    <span>{{user.name}}</span>
-  </md-list-item>
-</md-nav-list>
-```
-
-`src/app/app.component.html`
-```html
-<md-toolbar color="primary">
-  <span>Angular Material 2 - Starter App</span>
-</md-toolbar>
-<md-sidenav-layout fx-flex fx-layout="row">
-  <md-sidenav mode="side" opened="true">
-    <users-list [users]="users | async" (selected)="onUserSelected($event)"></users-list>
-  </md-sidenav>
-
-  <user-details [user]="selectedUser" fx-flex fx-layout="column"></user-details>
-</md-sidenav-layout>
-```
 - - -
 
 ## Summary
 
-With only nine (9) Tutorial Steps and a few minutes of work, we have quickly created a functional
+With only eight (8) Tutorial Steps and a few minutes of work, we have quickly created a functional
 Angular Material application that is beautiful, responsive, theme'ed, accessible, component-based,
 and easily maintained.
