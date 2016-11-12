@@ -15,7 +15,7 @@
     "@angular/core": "^2.1.2",
     "@angular/forms": "^2.1.2",
     "@angular/http": "^2.1.2",
-    "@angular/material": "^2.0.0-alpha.9-3",
+    "@angular/material": "^2.0.0-alpha.10",
     "@angular/platform-browser": "^2.1.2",
     "@angular/platform-browser-dynamic": "^2.1.2",
     "@angular/router": "^3.1.2",
@@ -26,13 +26,14 @@
     "zone.js": "^0.6.26"
   },
   "devDependencies": {
+    "@types/chai": "^3.4.34",
     "@types/node": "^6.0.46",
     "angular-cli": "1.0.0-beta.19-3",
     "codelyzer": "~1.0.0-beta.3",
     "concurrently": "^3.1.0",
     "opn-cli": "^3.1.0",
-    "ts-node": "1.6.1",
+    "ts-node": "1.7.0",
     "tslint": "3.15.1",
-    "typescript": "2.0.7"
+    "typescript": "2.0.9"
   }
 }
