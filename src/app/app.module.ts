@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { MaterialModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
+import 'hammerjs';
+
 @NgModule({
   declarations: [
     AppComponent

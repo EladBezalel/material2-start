@@ -18,10 +18,16 @@
         </md-tab>
       </md-tab-group>
     </md-sidenav>
-    <div class="details" fx-flex>
-      <md-icon svgIcon="avatars:{{selectedUser.avatar}}" class="avatar"></md-icon>
-      <h2>{{selectedUser.name}}</h2>
-      <p>{{selectedUser.details}}</p>
+    <div class="details" fx-flex fx-layout="column" fx-layout.gt-sm="row">
+      <md-card fx-flex="80">
+        <md-icon svgIcon="avatars:{{selectedUser.avatar}}" class="avatar"></md-icon>
+        <h2>{{selectedUser.name}}</h2>
+        <p>{{selectedUser.details}}</p>
+      </md-card>
+      <md-card fx-flex>
+        <md-slide-toggle [(ngModel)]="selectedUser.isAdmin">Admin?</md-slide-toggle>
+        <md-slide-toggle [(ngModel)]="selectedUser.isCool">Coooool??</md-slide-toggle>
+      </md-card>
     </div>
   </md-sidenav-layout>
 </div>
