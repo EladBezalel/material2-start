@@ -1,3 +1,41 @@
-<h1>
-  {{title}}
-</h1>
+<div fx-layout="column" fx-flex [class.dark-theme]="isDarkTheme">
+  <md-toolbar color="primary">
+    <div fx-layout="row" fx-flex fx-layout-align="space-between">
+      <span>Angular Material 2 - Starter App</span>
+      <button md-icon-button [md-menu-trigger-for]="menu">
+        <md-icon>more_vert</md-icon>
+      </button>
+    </div>
+  </md-toolbar>
+  <md-menu #menu x-position="before">
+    <button md-menu-item (click)="isDarkTheme = !isDarkTheme">Dark Theme</button>
+  </md-menu>
+  <md-sidenav-layout fx-layout="row" fx-flex>
+    <md-sidenav mode="side" opened>
+      <md-tab-group>
+        <md-tab label="Users">
+          <md-nav-list>
+            <md-list-item *ngFor="let user of users" (click)="selectedUser = user">
+              <md-icon svgIcon="avatars:{{user.avatar}}" class="avatar"></md-icon>
+              <span>{{user.name}}</span>
+            </md-list-item>
+          </md-nav-list>
+        </md-tab>
+        <md-tab label="Settings">
+          <span>Settings</span>
+        </md-tab>
+      </md-tab-group>
+    </md-sidenav>
+    <div class="details" fx-flex fx-layout="column" fx-layout.gt-sm="row">
+      <md-card fx-flex="80">
+        <md-icon svgIcon="avatars:{{selectedUser.avatar}}" class="avatar"></md-icon>
+        <h2>{{selectedUser.name}}</h2>
+        <p>{{selectedUser.details}}</p>
+      </md-card>
+      <md-card fx-flex>
+        <md-slide-toggle [(ngModel)]="selectedUser.isAdmin">Admin?</md-slide-toggle>
+        <md-slide-toggle [(ngModel)]="selectedUser.isCool">Coooool??</md-slide-toggle>
+      </md-card>
+    </div>
+  </md-sidenav-layout>
+</div>
