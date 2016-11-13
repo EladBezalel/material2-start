@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {MdIconRegistry} from '@angular/material';
 
 @Component({
   selector: 'app-root',
@@ -67,4 +68,8 @@ export class AppComponent {
       isCool: true
     }
   ];
+
+  constructor(iconRegistry: MdIconRegistry) {
+    iconRegistry.addSvgIconSetInNamespace('avatars', './assets/avatars.svg');
+  }
 }

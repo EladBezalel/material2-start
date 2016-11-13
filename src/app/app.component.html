@@ -8,6 +8,7 @@
         <md-tab label="Users">
           <md-nav-list>
             <md-list-item *ngFor="let user of users">
+              <md-icon svgIcon="avatars:{{user.avatar}}" class="avatar"></md-icon>
               <span>{{user.name}}</span>
             </md-list-item>
           </md-nav-list>
