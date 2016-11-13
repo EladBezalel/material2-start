@@ -69,7 +69,11 @@ export class AppComponent {
     }
   ];
 
+  selectedUser = {};
+
   constructor(iconRegistry: MdIconRegistry) {
     iconRegistry.addSvgIconSetInNamespace('avatars', './assets/avatars.svg');
+
+    this.selectedUser = this.users[0];
   }
 }
