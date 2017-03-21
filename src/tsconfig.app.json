@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
@@ -10,7 +9,7 @@
       "es2016",
       "dom"
     ],
-    "outDir": "../out-tsc/app",
+    "outDir": "../packages/spec",
     "module": "es2015",
     "baseUrl": "",
     "types": []

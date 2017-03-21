@@ -30,9 +30,7 @@
     }
   ],
   "e2e": {
-    "protractor": {
-      "config": "./protractor.conf.js"
-    }
+    "protractor": {}
   },
   "lint": [
     {
@@ -46,9 +44,7 @@
     }
   ],
   "test": {
-    "karma": {
-      "config": "./karma.conf.js"
-    }
+    "karma": {}
   },
   "defaults": {
     "styleExt": "css",

@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
@@ -9,7 +8,7 @@
       "es2016",
       "dom"
     ],
-    "outDir": "../out-tsc/spec",
+    "outDir": "../packages/spec",
     "module": "commonjs",
     "target": "es5",
     "baseUrl": "",
