@@ -6,7 +6,20 @@
 
   <md-sidenav-container fxFlex fxLayout="row">
     <md-sidenav mode="side" opened>
-      Sidenav
+
+      <md-tab-group>
+        <md-tab label="Users">
+          <md-nav-list>
+            <md-list-item *ngFor="let user of users">
+              <span>{{user.name}}</span>
+            </md-list-item>
+          </md-nav-list>
+        </md-tab>
+        <md-tab label="Settings">
+          <span>Settings</span>
+        </md-tab>
+      </md-tab-group>
+
     </md-sidenav>
     <div class="content">
       Page Content
