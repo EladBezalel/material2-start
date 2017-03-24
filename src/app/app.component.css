@@ -7,6 +7,10 @@ md-sidenav {
   width: 320px;
 }
 
+.content {
+  padding: 12px;
+}
+
 .avatar {
   overflow: hidden;
   width: 64px;
