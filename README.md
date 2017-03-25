@@ -28,27 +28,6 @@ content area. You can use it to quickly bootstrap your angular webapp projects a
 for these projects.
 - - -
 
-#### "How to build an App"
-
-Here are some generalized steps that may be used to conceptualize the application implementation
-process:
-
-1. Plan your layout and the components you want to use
-
-2. Use hard-coded HTML and mock content to make sure the components appear as desired
-
-3. Wire components to your application logic
-
-4. Add Responsive breakpoints
-
-5. Add Theming support
-
-6. Confirm ARIA compliance
-
-7. Write End-to-end (e2e) Tests
-
-   > It is important to validate your application logic with Angular Material UI components.
-
 ###### Wirefame
 
 The illustration below shows how we planned the layout and identified the primary components that
