@@ -8,12 +8,15 @@
 * [Step 6](./STEP_6.md)
 * [Step 7](./STEP_7.md)
 * **Step 8 <-**
+* [Step 9](./STEP_9.md)
+* [Step 10](./STEP_10.md)
 
-### Step #8:
+### Step #8 Task:
 
-Adding a dark theme and a menu with a button to toggle the theme 
+Add a dark theme and a menu with a button to toggle the theme: 
 
-`src/themes.scss`
+###### File: `src/themes.scss`
+
 ```scss
 @import '~@angular/material/core/theming/all-theme';
 
@@ -37,11 +40,12 @@ $theme: mat-light-theme($primary, $accent);
 
 ```
 
-Notice that we have a button with `[md-menu-trigger-for]` attribute that points what menu to open,
+Notice that we have a button with `[mdMenuTriggerFor]` attribute that points what menu to open,
 By setting the value `menu` for that attribute, we find an element with that name
 which happens to be `<md-menu #menu>`, and by clicking the trigger element, the menu would be opened
 
-`src/app/app.component.html`
+###### File: `src/app/app.component.html`
+
 ```html
 <div fxLayout="column" fxFlex [class.dark-theme]="isDarkTheme">
 
@@ -51,7 +55,7 @@ which happens to be `<md-menu #menu>`, and by clicking the trigger element, the 
     <!-- Filler that pushes the menu button to the end of the toolbar -->
     <span fxFlex></span>
 
-    <button md-icon-button [md-menu-trigger-for]="themeMenu">
+    <button md-icon-button [mdMenuTriggerFor]="themeMenu">
       <md-icon>more_vert</md-icon>
     </button>
 
@@ -59,7 +63,7 @@ which happens to be `<md-menu #menu>`, and by clicking the trigger element, the 
 
   <md-sidenav-container fxFlex fxLayout="row">
     ...
-  </md-sidenav-layout>
+  </md-sidenav-container>
   
   <md-menu #themeMenu x-position="before">
     <button md-menu-item (click)="isDarkTheme = !isDarkTheme">Toggle Theme</button>
@@ -67,9 +71,12 @@ which happens to be `<md-menu #menu>`, and by clicking the trigger element, the 
 </div>
 ```
 
-Adding dark theme default value to be false
+Also notice we're using `md-icon` again, but this time we're passing a ligature name that will be resovled out of the Material Icons font that we [imported in the `styles.css`](https://github.com/EladBezalel/material2-start/blob/workshop/src/styles.css#L1), you can see the full list of icons ligatures [here](https://material.io/icons/)
 
-`src/app/app.component.ts`
+Add a dark theme default value to  `false`
+
+###### File: `src/app/app.component.ts`
+
 ```ts
 import {Component} from '@angular/core';
 import {MdIconRegistry} from '@angular/material';
@@ -77,7 +84,7 @@ import {MdIconRegistry} from '@angular/material';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.less']
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   ...
@@ -88,5 +95,6 @@ export class AppComponent {
 }
 ```
 
-#### Next Step
-[Go to Summary](../README.md#summary)
+---
+
+[Go to Tutorial Step 9](./STEP_9.md)

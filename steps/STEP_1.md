@@ -4,21 +4,31 @@
 * [Step 2](./STEP_2.md)
 * [Step 3](./STEP_3.md)
 * [Step 4](./STEP_4.md)
-* [Step 5](./STEP_5.md)
+* [Step 5](./STEP_4.md)
 * [Step 6](./STEP_6.md)
 * [Step 7](./STEP_7.md)
 * [Step 8](./STEP_8.md)
+* [Step 9](./STEP_9.md)
+* [Step 10](./STEP_10.md)
 
-### Step #1:
+### Step #1 Task:
 
 Here you will install Angular Material in your Angular application.
 
 * Import `MaterialModule` from `@angular/material` and use it inside the imports
 * Since Angular Material depends on animations, the `BrowserAnimationsModule` needs to be included as well.
 
-Notice we also use `@angular/flex-layout` module to have a flex layout system
+> Since we will also be using flexbox CSS, let's also include the `@angular/flex-layout` library.
 
-`src/app/app.module.ts`
+```terminal
+npm install @angular/material @angular/flex-layout --save
+```
+
+Modify the following files to use Angular Material and FlexLayout in the application.
+
+###### File: `src/app/app.module.ts`
+
+
 ```ts
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
@@ -48,9 +58,10 @@ import {AppComponent} from './app.component';
 export class AppModule {}
 ```
 
-`src/main.less`
+###### File: `src/main.css`
+
 ```css
-@import '~@angular/material/core/theming/prebuilt/indigo-pink.css';
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
 @import "https://fonts.googleapis.com/css?family=Material+Icons";
 @import "https://fonts.googleapis.com/css?family=Roboto:400,300";
 
@@ -63,10 +74,30 @@ html, body {
   height: 100%;
 }
 ```
+### Tips
 
-> **Note:** We use flex properties on the `html` and `body` because they are not part of what angular bootstrap. This can be easily enough be fixed when bootstraping a component that has `body` as selector.
+#### 1. FlexLayout + Body
 
-> **Note:** We import a prebuilt theme file, read [Theming your Angular Material app](https://github.com/angular/material2/blob/master/docs/theming.md) for more info
+We use flex properties on the `html` and `body` because they are not part of what markup `<app-root>Loading...</app-root>` that Angular bootstraps. This can be easily enough be fixed when bootstraping a component that has `body` as selector. 
+
+###### File: `src/app/app.component.ts`
+
+```js
+@Component({
+  selector: 'body',
+  template: '<h1> {{title}} </h1>'
+})
+export class AppComponent {
+  title = 'Angular Material Workshop';
+}
+```
+
+#### 2. Themes
+
+We import a prebuilt theme file, read [Theming your Angular Material app](https://github.com/angular/material2/blob/master/docs/theming.md) for more info
+
+
+
+---
   
-#### Next Step
-[Go to Step 2](./STEP_2.md)
+[Go to Tutorial Step 2](./STEP_2.md)

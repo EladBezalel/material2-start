@@ -12,16 +12,6 @@ This starter app demonstrates how:
 * [Angular Material](http://github.com/angular/material) components can be used to create a good-looking production-ready app.
 * Theming can be configured and controlled with Angular Material. 
 
-#### Quick Jump ####
-* [Initial Setup](./steps/INITIAL_SETUP.md)
-* [Step 1](./steps/STEP_1.md)
-* [Step 2](./steps/STEP_2.md)
-* [Step 3](./steps/STEP_3.md)
-* [Step 4](./steps/STEP_4.md)
-* [Step 5](./steps/STEP_5.md)
-* [Step 6](./steps/STEP_6.md)
-* [Step 7](./steps/STEP_7.md)
-* [Step 8](./steps/STEP_8.md)
 
 This sample application is purposed as both a learning tool and a skeleton application for a typical
 [Angular Material](http://material.angular.io/) app, comprised of a side navigation area and a
@@ -62,8 +52,9 @@ We encourage you to walk through each step yourself and build the application fr
 However, if you get stuck or want to start from a clean slate, each step has an associated Git tag 
 that you can checkout to reset your code to match the start of the associated step in the tutorial.
 
-Switching between the different steps without having to follow the steps is also possible. Running the following command
-will open a terminal menu that allows you to switch between the steps.
+If you have not completed a tutorial step and wish to jump to the next step, then run the 
+following command to open a terminal menu. This menu allows you to easily switch between the tutorial 
+steps. 
 
 * `npm run workshop`
 
@@ -72,8 +63,21 @@ will open a terminal menu that allows you to switch between the steps.
   into your code. If you wish to start fresh, use the Git tags as described above.
 - - -
 
+#### Quick Jump ####
+* [Initial Setup](./steps/INITIAL_SETUP.md)
+* [Step 1](./steps/STEP_1.md)
+* [Step 2](./steps/STEP_2.md)
+* [Step 3](./steps/STEP_3.md)
+* [Step 4](./steps/STEP_4.md)
+* [Step 5](./steps/STEP_5.md)
+* [Step 6](./steps/STEP_6.md)
+* [Step 7](./steps/STEP_7.md)
+* [Step 8](./steps/STEP_8.md)
+* [Step 9](./steps/STEP_9.md)
+* [Step 10](./steps/STEP_10.md)
+
 ## Summary
 
-With only eight (8) Tutorial Steps and a few minutes of work, we have quickly created a functional
+With only ten (10) tutorial steps and a few minutes of work, we have quickly created a functional
 Angular Material application that is beautiful, responsive, theme'ed, accessible, component-based,
 and easily maintained.

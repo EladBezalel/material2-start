@@ -8,12 +8,15 @@
 * **Step 6 <-**
 * [Step 7](./STEP_7.md)
 * [Step 8](./STEP_8.md)
+* [Step 9](./STEP_9.md)
+* [Step 10](./STEP_10.md)
 
-### Step #6:
+### Step #6 Task:
 
-Here we will use a `md-slide-toggle` component from Angular Material.
+Here we will use `md-card` and `md-slide-toggle` components from Angular Material.
 
-`src/app/app.component.html`
+###### File:  `src/app/app.component.html`
+
 ```html
 ...
 
@@ -35,14 +38,25 @@ Here we will use a `md-slide-toggle` component from Angular Material.
 ...
 ```
 
-> **Note:** Using `fxLayout.sm="column"` tells the content to be a column container when the screen is small (breakpoint `960px`)
+![image](https://cloud.githubusercontent.com/assets/6004537/24765552/7d32dbf2-1ab5-11e7-886d-3eee6fa84ba6.png)
+
+
+### Tips
+
+#### 1. FlexLayout
+Using `fxLayout.sm="column"` tells the content to be a column container when the screen is small (breakpoint `960px`)
 
 Specifying a gap between the different children can be done by using 
 [`fxLayoutGap`](https://github.com/angular/flex-layout/wiki/Declarative-API-Overview) with a value of `16px`.
 
----
+#### 2. HammerJS
 
-`src/app/app.module.ts`
+HammerJS handles all the user interactions and gestures for Material and simplifies the API.
+
+Including the `hammerjs` package in our Angular application using Webpack.
+
+###### File:  `src/app/app.module.ts`
+
 ```ts
 ...
 
@@ -51,9 +65,6 @@ import 'hammerjs';
 ...
 ```
 
-HammerJS handles all the user interactions and gestures for Material and simplifies the API.
+----
 
-Including the `hammerjs` package in our Angular application using Webpack.
-
-#### Next Step
-[Go to Step 7](./STEP_7.md)
+[Go to Tutorial Step 7](./STEP_7.md)

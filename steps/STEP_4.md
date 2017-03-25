@@ -8,13 +8,16 @@
 * [Step 6](./STEP_6.md)
 * [Step 7](./STEP_7.md)
 * [Step 8](./STEP_8.md)
+* [Step 9](./STEP_9.md)
+* [Step 10](./STEP_10.md)
 
-### Step #4:
+### Step #4 Task:
 
 Here you will use the `MdIconRegistry` service provided by Material which allows us to add a namespace for a group of svg's.
 
 
-`src/app/app.component.html`
+###### File: `src/app/app.component.html`
+
 ```html
 ...
   <md-sidenav mode="side" opened>
@@ -41,7 +44,8 @@ By using the `addSvgIconSetInNamespace` function we provide a namespace that can
 and the location of that svg group.
 By that, we can have `<md-icon svgIcon="[namespace]:[id]">` and it would look the namespace and the id in it.
 
-`src/app/app.component.ts`
+###### File:  `src/app/app.component.ts`
+
 ```ts
 import {Component} from '@angular/core';
 import {MdIconRegistry} from '@angular/material';
@@ -49,7 +53,7 @@ import {MdIconRegistry} from '@angular/material';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.less']
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   users = [
@@ -80,7 +84,8 @@ export class AppComponent {
 
 ```
 
-`src/app/app.component.css`
+###### File:  `src/app/app.component.css`
+
 ```css
 ...
 
@@ -96,11 +101,19 @@ export class AppComponent {
   height: auto !important;
 }
 ```
-> **Note** 
-> * Using the `/deep/` prefix on selectors will cause the selector to be moved out of 
-   the view encapsulation.
-> * Angular Material list items have a fixed height and won't expand to the height of the content.
+
+### Tips
+
+#### 1. Deep CSS Operators
+
+Using the `/deep/` prefix on selectors will cause the selector to be moved out of the view encapsulation.
+
+#### 2.  List Items
+
+Angular Material list items have a fixed height and won't expand to the height of the content.
     Overwriting and forcing the height to `auto` allows the avatar to take full height.
 
-#### Next Step
-[Go to Step 5](./STEP_5.md)
+----
+
+
+[Go to Tutorial Step 5](./STEP_5.md)

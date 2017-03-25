@@ -17,7 +17,7 @@ const buildTags = (tags, prefix = '') => {
   return Promise.resolve(tags.filter(tag => tag.startsWith(prefix)))
     .then(tags => tags.sort((a, b) => parseInt(a.split('-')[2]) - parseInt(b.split('-')[2])))
     .then(tags => Promise.all(tags.map(tag => populateTag(tag))))
-    .then(tags => tags.map(tag => ({
+    .then(tags => tags.map((tag: any) => ({
       ...tag,
       prefix,
       label: tag.name.split('-').slice(1).join(' ').toUpperCase()

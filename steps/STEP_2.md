@@ -8,12 +8,14 @@
 * [Step 6](./STEP_6.md)
 * [Step 7](./STEP_7.md)
 * [Step 8](./STEP_8.md)
+* [Step 9](./STEP_9.md)
+* [Step 10](./STEP_10.md)
 
-### Step #2:
+### Step #2 Task:
 
 Here we will use the wireframe planning and layout to identify the components and attributes needed.
 
-* Add the `<md-toolbar>`, `<md-sidenav-layout>`, `<md-sidenav>` containers
+* Add the `<md-toolbar>`, `<md-sidenav-container>`, `<md-sidenav>` containers
 
   > **Note:** The `<md-sidenav>` is the container for the Users **master list** view, and for now a simple
   `<div>` is the container for the User **detail** view.
@@ -21,7 +23,8 @@ Here we will use the wireframe planning and layout to identify the components an
 * Add the **fxLayout** and **fxFlex** attributes to configure the container layouts and sizing aspects
 * Use `mode="side"` and `opened` to lock the sidenav open on the left
 
-`src/app/app.component.html`
+###### File: `src/app/app.component.html`
+
 ```html
 <div fxLayout="column" fxFlex>
 
@@ -43,12 +46,14 @@ Here we will use the wireframe planning and layout to identify the components an
 
 Giving the sidenav a default width of `320px`
 
-`src/app/app.component.less`
+###### File:  `src/app/app.component.css`
+
 ```css
 md-sidenav {
   width: 320px;
 }
 ```
 
-#### Next Step
-[Go to Step 3](./STEP_3.md)
+---
+  
+[Go to Tutorial Step 3](./STEP_3.md)

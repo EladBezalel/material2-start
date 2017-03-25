@@ -8,19 +8,22 @@
 * [Step 6](./STEP_6.md)
 * [Step 7](./STEP_7.md)
 * [Step 8](./STEP_8.md)
+* [Step 9](./STEP_9.md)
+* [Step 10](./STEP_10.md)
 
-### Step #5:
+### Step #5 Task:
 
-Here we will add a selected user functionality and show the selected user details in our details container
+Let's add *Selected Us*er functionality and show the selected user details in our details container
 
-`src/app/app.component.html`
+###### File:  `src/app/app.component.html`
+
 ```html
 <md-sidenav mode="side" opened>
 
   <md-tab-group>
     <md-tab label="Users">
       <md-nav-list>
-+       <md-list-item *ngFor="let user of users" (click)="selectedUser = user">
+        <md-list-item *ngFor="let user of users" (click)="selectedUser = user">
           <md-icon svgIcon="avatars:{{user.avatar}}" class="avatar"></md-icon>
           <span>{{user.name}}</span>
         </md-list-item>
@@ -33,15 +36,16 @@ Here we will add a selected user functionality and show the selected user detail
 
 </md-sidenav>
 <div class="content">
-+  <md-icon svgIcon="avatars:{{selectedUser.avatar}}" class="avatar"></md-icon>
-+  <h2>{{selectedUser.name}}</h2>
-+  <p>{{selectedUser.details}}</p>
+   <md-icon svgIcon="avatars:{{selectedUser.avatar}}" class="avatar"></md-icon>
+   <h2>{{selectedUser.name}}</h2>
+   <p>{{selectedUser.details}}</p>
 </div>
 ```
 
-Using the first user from the users list for the initial state
+Let's select the first user from the users list for our initial view state
 
-`src/app/app.component.ts`
+###### File:  `src/app/app.component.ts`
+
 ```ts
 import {Component} from '@angular/core';
 import {MdIconRegistry} from '@angular/material';
@@ -49,7 +53,7 @@ import {MdIconRegistry} from '@angular/material';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.less']
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   users = [
@@ -77,13 +81,15 @@ export class AppComponent {
 
 ```
 
-`src/app/app.component.css`
+###### File:  `src/app/app.component.css`
+
 ```css
 .content {
   padding: 12px;
 }
 ```
+---
 
-#### Next Step
-[Go to Step 6](./STEP_6.md)
+
+[Go to Tutorial Step 6](./STEP_6.md)
 
