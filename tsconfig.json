@@ -1,7 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "outDir": "./dist/out-tsc",
+    "outDir": "./dist/packages/material2-start",
     "baseUrl": "src",
     "sourceMap": true,
     "declaration": false,
