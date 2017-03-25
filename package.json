@@ -7,7 +7,7 @@
     "start": "ng serve",
     "build": "ng build",
     "lint": "ng lint",
-    "workshop": "babel-node ./workshop/index"
+    "workshop": "babel-node ./workshop-cli"
   },
   "private": true,
   "dependencies": {
