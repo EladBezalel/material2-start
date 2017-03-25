@@ -1,26 +1,16 @@
 # Angular Material 2 Start
 
-This branch contains the tutorial steps and processes used to implement the components-demo-app shown below:
 
 <img width="928" alt="ccf1dd30be16625f475e8a348c89e11f" src="https://cloud.githubusercontent.com/assets/4987015/24325016/1e649250-1191-11e7-8b4e-27aad9f996a2.png">
 
 Above is a snapshot of the Starter-App with a **Master-Detail** layout: showing a list of users
 (left) and a user detail view (right).
 
-This Starter app demonstrates how:
+This starter app demonstrates how:
 
-*  Flex-Layout directives `fxLayout` and `fxFlex` can easily setup HTML containers
-*  Angular Material components `<md-toolbar>`, `<md-nav-list>`, and `<md-icon>` can quickly provide
-   a base application structure
-*  Theming can be altered/configured
-
-
-This sample application is purposed as both a learning tool and a skeleton application for a typical
-[Angular Material2](http://angular.io/) web app, comprised of a side navigation area and a
-content area. You can use it to quickly bootstrap your angular webapp projects and dev environment
-for these projects.
-
-- - -
+* [Flex-Layout](http://github.com/angular/flex-layout) directives (`fxLayout`, `fxFlex`, `fxLayoutGap`) can create advanced layouts.
+* [Angular Material](http://github.com/angular/material) components can be used to create a good-looking production-ready app.
+* Theming can be configured and controlled with Angular Material. 
 
 #### Quick Jump ####
 * [Step 1](#step-1)
@@ -31,6 +21,12 @@ for these projects.
 * [Step 6](#step-6)
 * [Step 7](#step-7)
 * [Step 8](#step-8)
+
+This sample application is purposed as both a learning tool and a skeleton application for a typical
+[Angular Material](http://material.angular.io/) app, comprised of a side navigation area and a
+content area. You can use it to quickly bootstrap your angular webapp projects and dev environment
+for these projects.
+- - -
 
 #### "How to build an App"
 
@@ -86,24 +82,14 @@ We encourage you to walk through each step yourself and build the application fr
 However, if you get stuck or want to start from a clean slate, each step has an associated Git tag 
 that you can checkout to reset your code to match the start of the associated step in the tutorial.
 
-For instance, to start on Step 3, run `git checkout step-3`. Also note that `step-1` is the same as
-the `tutorial` branch.
+Switching between the different steps without having to follow the steps is also possible. Running the following command
+will open a terminal menu that allows you to switch between the steps.
+
+* `npm run workshop`
 
 > **Note:** In some of the Steps in this README, we have abbreviated some of the HTML or JavaScript
   in order to show what is being added or changed, so you may not be able copy & paste every example
   into your code. If you wish to start fresh, use the Git tags as described above.
-
-The available step tags (in order) are:
-
-- `comp-step-0` == initial setup by `angular-cli`
-- `comp-step-1` == start of `components-demo-tutorial`
-- `comp-step-2`
-- `comp-step-3`
-- `comp-step-4`
-- `comp-step-5`
-- `comp-step-6`
-- `comp-step-7` 
-- `comp-final` == `components-demo`
 
 ###### Initial Setup
 
@@ -113,7 +99,7 @@ Now let's review our initial setup:
 ```html
 <head>
   <meta charset="utf-8">
-  <title>Angular Material 2 Start</title>
+  <title>Angular Material Start</title>
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -151,7 +137,7 @@ export class AppModule {}
 ```
 
 These files contain the basic building blocks of, and bootstrapping for our application. The
-`index.html` file is the html entry point and `main.ts` is the javascript entry point;
+`index.html` file is the html entry point and `main.ts` is the Webpack entry point;
 
 > **Note:** The `angular-cli.json` file simply configures how angular-cli via webpack loads all of the files/libraries.
 
