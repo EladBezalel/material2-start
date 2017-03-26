@@ -124,9 +124,10 @@ These files contain the basic building blocks of, and bootstrapping for our appl
 
 ### Step #1:
 
-Here you will modify the application to use Angular-Material2.
+Here you will install Angular Material in your Angular application.
 
 * Import `MaterialModule` from `@angular/material` and use it inside the imports
+* Since Angular Material depends on animations, the `BrowserAnimationsModule` needs to be included as well.
 
 Notice we also use `@angular/flex-layout` module to have a flex layout system
 
@@ -137,10 +138,11 @@ import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 
-import {AppComponent} from './app.component';
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MaterialModule} from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
+
+import {AppComponent} from './app.component';
 
 @NgModule({
   declarations: [
@@ -151,7 +153,8 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     FormsModule,
     HttpModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    BrowserAnimationsModule
   ],
   bootstrap: [AppComponent]
 })
@@ -470,7 +473,7 @@ Here we will use a `md-slide-toggle` component from Angular Material.
     <p>{{selectedUser.details}}</p>
   </md-card>
 
-  <md-card fxFlex>
+  <md-card fxFlex fxLayout="column">
     <md-slide-toggle [(ngModel)]="selectedUser.isAdmin">Is Admin?</md-slide-toggle>
     <md-slide-toggle [(ngModel)]="selectedUser.isCool">Is Cool?</md-slide-toggle>
   </md-card>
@@ -508,7 +511,7 @@ Add themes with the [theming mixins](https://github.com/angular/material2/blob/m
 
 `src/themes.scss`
 ```scss
-@import '~@angular/material/core/theming/all-theme';
+@import '~@angular/material/_theming';
 
 @include mat-core();
 
