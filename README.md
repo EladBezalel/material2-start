@@ -348,7 +348,7 @@ export class AppComponent {
 
   constructor(iconRegistry: MdIconRegistry, sanitizer: DomSanitizer) {
     // To avoid XSS attacks, the URL needs to be trusted from inside of your application.
-    let avatarsSafeUrl = sanitizer.bypassSecurityTrustResourceUrl('./assets/avatars.svg');
+    const avatarsSafeUrl = sanitizer.bypassSecurityTrustResourceUrl('./assets/avatars.svg');
 
     iconRegistry.addSvgIconSetInNamespace('avatars', avatarsSafeUrl);
   }
