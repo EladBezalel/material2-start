@@ -12,7 +12,7 @@
 
   </md-toolbar>
 
-  <md-sidenav-container fxFlex fxLayout="row">
+  <md-sidenav-container fxFlex>
     <md-sidenav mode="side" opened>
 
       <md-tab-group>
@@ -25,7 +25,31 @@
           </md-nav-list>
         </md-tab>
         <md-tab label="Settings">
-          <span>Settings</span>
+
+          <form class="form" fxLayout="column" [formGroup]="userAddForm" (ngSubmit)="onSubmit()">
+
+            <md-input-container>
+              <input mdInput placeholder="Name" formControlName="name">
+            </md-input-container>
+
+            <md-input-container> 
+              <textarea mdInput placeholder="Details" formControlName="details"></textarea>
+            </md-input-container>
+
+            <md-select formControlName="avatar" placeholder="Avatar">
+              <md-option *ngFor="let avatar of avatars" [value]="avatar">Avatar - {{avatar}}</md-option>
+            </md-select>
+
+            <p fxLayoutAlign="space-around">
+              <md-checkbox formControlName="isCool">Is Cool</md-checkbox>
+              <md-checkbox formControlName="isAdmin">Is Admin</md-checkbox>
+            </p>
+
+
+            <button md-button color="primary" type="submit">Create User</button>
+
+          </form>
+
         </md-tab>
       </md-tab-group>
 

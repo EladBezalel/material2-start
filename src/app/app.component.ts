@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {MdIconRegistry} from '@angular/material';
 import {DomSanitizer} from '@angular/platform-browser';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -73,12 +74,31 @@ export class AppComponent {
 
   selectedUser = this.users[0];
   isDarkTheme = false;
+  userAddForm: FormGroup;
+  avatars = new Array(16).fill(0).map((_, i) => `svg-${i+1}`);
 
-  constructor(iconRegistry: MdIconRegistry, sanitizer: DomSanitizer) {
+  constructor(iconRegistry: MdIconRegistry, sanitizer: DomSanitizer, formBuilder: FormBuilder) {
     // To avoid XSS attacks, the URL needs to be trusted from inside of your application.
     const avatarsSafeUrl = sanitizer.bypassSecurityTrustResourceUrl('./assets/avatars.svg');
 
     iconRegistry.addSvgIconSetInNamespace('avatars', avatarsSafeUrl);
+
+    this.userAddForm = formBuilder.group({
+      name: ['', Validators.required],
+      details: ['Lorem ipsum etc.', Validators.required],
+      isAdmin: false,
+      isCool: false,
+      avatar: ['', Validators.required]
+    });
+  }
+
+  onSubmit() {
+    if (this.userAddForm.invalid) {
+      return;
+    }
+
+    this.users.push(this.userAddForm.value);
+    this.userAddForm.reset();
   }
 
 }

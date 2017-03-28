@@ -22,3 +22,15 @@ md-sidenav {
 /deep/ .mat-list-item-content {
   height: auto !important;
 }
+
+md-checkbox {
+  margin: 8px 0;
+}
+
+.form {
+  padding: 16px;
+}
+
+.form > * {
+  margin: 8px 0;
+}
