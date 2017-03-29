@@ -51,4 +51,4 @@ md-sidenav {
 ```
 
 #### Next Step
-[Go to Step 3](#step-3)
+[Go to Step 3](./STEP_3.md)
