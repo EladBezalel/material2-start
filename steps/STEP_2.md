@@ -29,7 +29,7 @@ Here we will use the wireframe planning and layout to identify the components an
     <span>Angular Material</span>
   </md-toolbar>
 
-  <md-sidenav-container fxFlex fxLayout="row">
+  <md-sidenav-container fxFlex>
     <md-sidenav mode="side" opened>
       Sidenav
     </md-sidenav>
