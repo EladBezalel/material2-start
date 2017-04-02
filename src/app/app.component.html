@@ -22,10 +22,19 @@
       </md-tab-group>
 
     </md-sidenav>
-    <div class="content">
-      <md-icon svgIcon="avatars:{{selectedUser.avatar}}" class="avatar"></md-icon>
-      <h2>{{selectedUser.name}}</h2>
-      <p>{{selectedUser.details}}</p>
+    <div class="content" fxLayout="row" fxLayout.sm="column" fxLayoutGap="16px">
+
+      <md-card fxFlex="80">
+        <md-icon svgIcon="avatars:{{selectedUser.avatar}}" class="avatar"></md-icon>
+        <h2>{{selectedUser.name}}</h2>
+        <p>{{selectedUser.details}}</p>
+      </md-card>
+
+      <md-card fxFlex fxLayout="column" fxLayoutGap="14px">
+        <md-slide-toggle [(ngModel)]="selectedUser.isAdmin">Is Admin?</md-slide-toggle>
+        <md-slide-toggle [(ngModel)]="selectedUser.isCool">Is Cool?</md-slide-toggle>
+      </md-card>
+      
     </div>
   </md-sidenav-container>
 
