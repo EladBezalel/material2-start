@@ -25,7 +25,7 @@ Here we will use a `md-slide-toggle` component from Angular Material.
     <p>{{selectedUser.details}}</p>
   </md-card>
 
-  <md-card fxFlex fxLayout="column">
+  <md-card fxFlex fxLayout="column" fxLayoutGap="14px">
     <md-slide-toggle [(ngModel)]="selectedUser.isAdmin">Is Admin?</md-slide-toggle>
     <md-slide-toggle [(ngModel)]="selectedUser.isCool">Is Cool?</md-slide-toggle>
   </md-card>
