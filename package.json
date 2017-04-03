@@ -7,7 +7,7 @@
     "start": "ng serve",
     "build": "ng build",
     "lint": "ng lint",
-    "workshop": "babel-node ./workshop-cli"
+    "workshop": "ts-node ./workshop-cli"
   },
   "private": true,
   "dependencies": {
@@ -31,15 +31,12 @@
     "@angular/cli": "1.0.0",
     "@angular/compiler-cli": "^4.0.0",
     "@types/jasmine": "2.5.46",
-    "@types/node": "~6.0.60",
-    "babel-cli": "^6.24.0",
-    "babel-plugin-transform-object-rest-spread": "^6.23.0",
-    "babel-preset-es2015": "^6.24.0",
+    "@types/node": "~7.0.12",
     "codelyzer": "~2.0.0",
-    "nodegit": "^0.18.0",
+    "simple-git": "^1.69.0",
     "simple-terminal-menu": "^1.1.3",
-    "ts-node": "~2.0.0",
+    "ts-node": "~3.0.2",
     "tslint": "^4.5.1",
-    "typescript": "^2.2.1"
+    "typescript": "^2.2.2"
   }
 }
