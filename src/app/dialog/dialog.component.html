@@ -1,5 +1,27 @@
-<h3>Admin Dialog</h3>
+<h3>Add User Dialog</h3>
+<form #form="ngForm" (ngSubmit)="dialogRef.close(form.value)" ngNativeValidate>
+  <div fxLayout="column" fxLayoutGap="8px">
+    <div fxLayout="row" fxLayoutAlign="start center">
+      <md-icon svgIcon="avatars:{{selectedAvatar}}" class="avatar"></md-icon>
+      <md-select name="avatar" fxFlex placeholder="Avatar" [(ngModel)]="selectedAvatar">
+        <md-option *ngFor="let avatar of avatars; let i = index;" [value]="avatar">Avatar - {{i + 1}}</md-option>
+      </md-select>
+    </div>
+    <md-input-container>
+      <input mdInput ngModel name="name" placeholder="Full name" required>
+    </md-input-container>
 
-<md-dialog-content>
-  This is the admin dialog.
-</md-dialog-content>
+    <md-input-container>
+      <textarea mdInput ngModel name="details" placeholder="Details" rows="15" cols="60" required></textarea>
+    </md-input-container>
+
+    <div fxLayout="row" fxLayoutGap="24px">
+      <md-checkbox ngModel name="isAdmin">Is Admin?</md-checkbox>
+      <md-checkbox ngModel name="isCool">Is Cool?</md-checkbox>
+    </div>
+  </div>
+  <md-dialog-actions align="end">
+    <button md-button type="button" (click)="dialogRef.close()">Cancel</button>
+    <button md-button color="accent">Save User</button>
+  </md-dialog-actions>
+</form>
