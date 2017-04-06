@@ -58,7 +58,7 @@ import {AppComponent} from './app.component';
 export class AppModule {}
 ```
 
-###### File: `src/main.css`
+###### File: `src/styles.css`
 
 ```css
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
