@@ -15,7 +15,7 @@
 
 Add themes with the [theming mixins](https://github.com/angular/material2/blob/master/docs/theming.md) provided by Material.
 
-###### File: `src/themes.scss`
+###### File: `src/theme.scss`
 
 ```scss
 @import '~@angular/material/_theming';
@@ -43,7 +43,7 @@ The Angular CLI has a built-in plugin to compile scss for us, so all we have to 
     {
       "styles": [
         "styles.css",
-        "themes.scss"
+        "theme.scss"
       ]
     }
   ]
