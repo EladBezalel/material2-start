@@ -1,7 +1,15 @@
-<div fxLayout="column" fxFlex>
+<div fxLayout="column" fxFlex [class.dark-theme]="isDarkTheme">
 
   <md-toolbar color="primary">
     <span>Angular Material</span>
+
+    <!-- Filler that pushes the menu button to the end of the toolbar -->
+    <span fxFlex></span>
+
+    <button md-icon-button [mdMenuTriggerFor]="themeMenu">
+      <md-icon>more_vert</md-icon>
+    </button>
+
   </md-toolbar>
 
   <md-sidenav-container fxFlex>
@@ -37,5 +45,9 @@
       
     </div>
   </md-sidenav-container>
+
+  <md-menu #themeMenu x-position="before">
+    <button md-menu-item (click)="isDarkTheme = !isDarkTheme">Toggle Theme</button>
+  </md-menu>
 
 </div>
