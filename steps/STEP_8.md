@@ -18,7 +18,7 @@ Add a dark theme and a menu with a button to toggle the theme:
 ###### File: `src/themes.scss`
 
 ```scss
-@import '~@angular/material/core/theming/all-theme';
+@import '~@angular/material/_theming';
 
 @include mat-core();
 
