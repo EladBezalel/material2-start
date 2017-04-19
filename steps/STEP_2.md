@@ -49,6 +49,11 @@ Giving the sidenav a default width of `320px`
 ###### File:  `src/app/app.component.css`
 
 ```css
+:host {
+  display: flex;
+  flex: 1;
+}
+
 md-sidenav {
   width: 320px;
 }
