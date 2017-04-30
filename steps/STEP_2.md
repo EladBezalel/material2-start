@@ -44,11 +44,16 @@ Here we will use the wireframe planning and layout to identify the components an
 </div>
 ```
 
-Giving the sidenav a default width of `320px`
+Giving the host element a flex property of `1` to fill height and sidenav a default width of `320px`
 
 ###### File:  `src/app/app.component.css`
 
 ```css
+:host {
+  display: flex;
+  flex: 1;
+}
+
 md-sidenav {
   width: 320px;
 }
