@@ -56,7 +56,7 @@ If you have not completed a tutorial step and wish to jump to the next step, the
 following command to open a terminal menu. This menu allows you to easily switch between the tutorial 
 steps. 
 
-* `npm run workshop`
+* `npm run workshop` (Only works if `material2-start` has been downloaded using Git)
 
 > **Note:** In some of the Steps in this README, we have abbreviated some of the HTML or JavaScript
   in order to show what is being added or changed, so you may not be able copy & paste every example
