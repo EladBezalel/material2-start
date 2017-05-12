@@ -94,7 +94,7 @@ export class AppComponent {
 
 #### 2. Themes
 
-We import a prebuilt theme file, read [Theming your Angular Material app](https://github.com/angular/material2/blob/master/docs/theming.md) for more info
+We import a prebuilt theme file, read [Theming your Angular Material app](https://github.com/angular/material2/blob/master/guides/theming.md) for more info
 
 
 
