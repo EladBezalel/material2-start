@@ -32,6 +32,8 @@ A `fab` button at the bottom-right will be created to open the Angular Material 
 ###### File:  `src/app/app.component.ts`
 
 ```ts
+import {MdIconRegistry, MdDialog} from '@angular/material';
+
 import {DialogComponent} from './dialog/dialog.component';
 
 @Component({
