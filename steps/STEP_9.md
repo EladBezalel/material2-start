@@ -32,6 +32,8 @@ A `fab` button at the bottom-right will be created to open the Angular Material 
 ###### File:  `src/app/app.component.css`
 
 ```css
+  ...
+  
 .fab-bottom-right {
 position: fixed;
 right: 16px;
