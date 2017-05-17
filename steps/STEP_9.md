@@ -29,6 +29,18 @@ Creating an Angular Material dialog.
 
 A `fab` button at the bottom-right will be created to open the Angular Material dialog.
 
+###### File:  `src/app/app.component.css`
+
+```css
+.fab-bottom-right {
+position: fixed;
+right: 16px;
+bottom: 16px;
+}
+```
+
+The `fab` button needs some styling to place it in the right spot.
+
 ###### File:  `src/app/app.component.ts`
 
 ```ts
