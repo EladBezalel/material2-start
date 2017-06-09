@@ -9,7 +9,7 @@ Above is a snapshot of the Starter-App with a **Master-Detail** layout: showing 
 This starter app demonstrates how:
 
 * [Flex-Layout](http://github.com/angular/flex-layout) directives (`fxLayout`, `fxFlex`, `fxLayoutGap`) can create advanced layouts.
-* [Angular Material](http://github.com/angular/material) components can be used to create a good-looking production-ready app.
+* [Angular Material](http://github.com/angular/material2) components can be used to create a good-looking production-ready app.
 * Theming can be configured and controlled with Angular Material. 
 
 
