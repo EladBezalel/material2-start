@@ -7,12 +7,9 @@ import {
   MdInputModule,
   MdMenuModule,
   MdOptionModule,
-  MdRadioModule,
   MdSidenavModule,
   MdSlideToggleModule,
-  MdSnackBarModule,
-  MdToolbarModule,
-  MdTooltipModule
+  MdToolbarModule
 } from '@angular/material';
 
 @NgModule({
@@ -24,12 +21,9 @@ import {
     MdInputModule,
     MdMenuModule,
     MdOptionModule,
-    MdRadioModule,
     MdSidenavModule,
     MdSlideToggleModule,
-    MdSnackBarModule,
-    MdToolbarModule,
-    MdTooltipModule
+    MdToolbarModule
   ],
   exports: [
     MdButtonModule,
@@ -39,12 +33,9 @@ import {
     MdInputModule,
     MdMenuModule,
     MdOptionModule,
-    MdRadioModule,
     MdSidenavModule,
     MdSlideToggleModule,
-    MdSnackBarModule,
-    MdToolbarModule,
-    MdTooltipModule
+    MdToolbarModule
   ]
 })
 
