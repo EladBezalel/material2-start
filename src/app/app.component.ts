@@ -2,6 +2,8 @@ import {Component} from '@angular/core';
 import {MdIconRegistry, MdDialog} from '@angular/material';
 import {DomSanitizer} from '@angular/platform-browser';
 
+import 'rxjs/add/operator/filter';
+
 import {DialogComponent} from './dialog/dialog.component';
 
 @Component({
@@ -26,7 +28,7 @@ export class AppComponent {
       name: 'George Duke',
       avatar: 'svg-12',
       details: 'Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata ' +
-      'corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor ' +
+      'corpora quaeritis. Summus brains sit, morbo vel maleficia? De apocalypsi gorger omero undead survivor ' +
       'dictum mauris.',
       isAdmin: false,
       isCool: true
@@ -83,7 +85,7 @@ export class AppComponent {
     iconRegistry.addSvgIconSetInNamespace('avatars', avatarsSafeUrl);
   }
 
-  private openAdminDialog() {
+  openAdminDialog() {
     this.dialog.open(DialogComponent).afterClosed()
       .filter(result => !!result)
       .subscribe(user => {
