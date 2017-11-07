@@ -22,28 +22,30 @@ Creating a form inside of the Angular Material dialog.
 <form #form="ngForm" (ngSubmit)="dialogRef.close(form.value)" ngNativeValidate>
   <div fxLayout="column" fxLayoutGap="8px">
     <div fxLayout="row" fxLayoutAlign="start center">
-      <md-icon svgIcon="avatars:{{selectedAvatar}}" class="avatar"></md-icon>
-      <md-select name="avatar" fxFlex placeholder="Avatar" [(ngModel)]="selectedAvatar">
-        <md-option *ngFor="let avatar of avatars; let i = index;" [value]="avatar">Avatar - {{i + 1}}</md-option>
-      </md-select>
+      <mat-icon svgIcon="avatars:{{selectedAvatar}}" class="avatar"></mat-icon>
+      <mat-form-field>
+        <mat-select name="avatar" fxFlex placeholder="Avatar" [(ngModel)]="selectedAvatar">
+          <mat-option *ngFor="let avatar of avatars; let i = index;" [value]="avatar">Avatar - {{i + 1}}</mat-option>
+        </mat-select>
+      </mat-form-field>
     </div>
-    <md-input-container>
+    <mat-form-field>
       <input mdInput ngModel name="name" placeholder="Full name" required>
-    </md-input-container>
+    </mat-form-field>
 
-    <md-input-container>
+    <mat-form-field>
       <textarea mdInput ngModel name="details" placeholder="Details" rows="15" cols="60" required></textarea>
-    </md-input-container>
+    </mat-form-field>
 
     <div fxLayout="row" fxLayoutGap="24px">
-      <md-checkbox ngModel name="isAdmin">Is Admin?</md-checkbox>
-      <md-checkbox ngModel name="isCool">Is Cool?</md-checkbox>
+      <mat-checkbox ngModel name="isAdmin">Is Admin?</mat-checkbox>
+      <mat-checkbox ngModel name="isCool">Is Cool?</mat-checkbox>
     </div>
   </div>
-  <md-dialog-actions align="end">
-    <button md-button type="button" (click)="dialogRef.close()">Cancel</button>
-    <button md-button color="accent">Save User</button>
-  </md-dialog-actions>
+  <mat-dialog-actions align="end">
+    <button mat-button type="button" (click)="dialogRef.close()">Cancel</button>
+    <button mat-button color="accent">Save User</button>
+  </mat-dialog-actions>
 </form>
 ```
 
@@ -60,7 +62,7 @@ back to the `AppComponent` and added to the array of `users`.
 
 ```ts
 import {Component} from '@angular/core';
-import {MdDialogRef} from '@angular/material';
+import {MatDialogRef} from '@angular/material';
 
 @Component({
   templateUrl: 'dialog.component.html'
@@ -69,13 +71,13 @@ export class DialogComponent {
   avatars = new Array(16).fill(0).map((_, i) => `svg-${i+1}`);
   selectedAvatar = this.avatars[0];
 
-  constructor(public dialogRef: MdDialogRef<DialogComponent>) {}
+  constructor(public dialogRef: MatDialogRef<DialogComponent>) {}
 }
 
 ```
 
-For components that are opened through the `MdDialog` service, the `MdDialogRef` can be injected
-using Depndency Injection. Use the `MdDialogRef` token to close and deliver data back to the origin component.
+For components that are opened through the `MatDialog` service, the `MatDialogRef` can be injected
+using Depndency Injection. Use the `MatDialogRef` token to close and deliver data back to the origin component.
 
 ###### File: `src/app/app.component.ts`
 
@@ -88,15 +90,15 @@ this.dialog.open(DialogComponent).afterClosed()
   });
 ```
 
-When opening a dialog using the `MdDialog` service, there will be a `afterClosed()` observable
-that will contain the result data from the `MdDialogRef`.
+When opening a dialog using the `MatDialog` service, there will be a `afterClosed()` observable
+that will contain the result data from the `MatDialogRef`.
 
 ###### File: `src/app/app.component.css`
 
 ```css
 ...
 
-/deep/ md-icon.avatar {
+/deep/ mat-icon.avatar {
   ...
 }
 ```

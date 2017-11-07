@@ -33,11 +33,27 @@ Modify the following files to use Angular Material and FlexLayout in the applica
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {HttpModule} from '@angular/http';
+import {HttpClientModule} from '@angular/common/http';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MaterialModule} from '@angular/material';
-import {FlexLayoutModule} from '@angular/flex-layout';
+
+import { FlexLayoutModule } from '@angular/flex-layout';
+
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatDialogModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSlideToggleModule,
+  MatTabsModule,
+  MatToolbarModule
+} from '@angular/material';
 
 import {AppComponent} from './app.component';
 
@@ -48,10 +64,26 @@ import {AppComponent} from './app.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
-    MaterialModule,
-    FlexLayoutModule,
-    BrowserAnimationsModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+
+    // Material
+    MatButtonModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatDialogModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSlideToggleModule,
+    MatTabsModule,
+    MatToolbarModule,
+
+    // Flex-layout
+    FlexLayoutModule
   ],
   bootstrap: [AppComponent]
 })

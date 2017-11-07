@@ -13,7 +13,7 @@
 
 ### Step #6 Task:
 
-Here we will use `md-card` and `md-slide-toggle` components from Angular Material.
+Here we will use `mat-card` and `mat-slide-toggle` components from Angular Material.
 
 ###### File:  `src/app/app.component.html`
 
@@ -22,16 +22,16 @@ Here we will use `md-card` and `md-slide-toggle` components from Angular Materia
 
 <div class="content" fxLayout="row" fxLayout.sm="column" fxLayoutGap="16px">
 
-  <md-card fxFlex="80">
-    <md-icon svgIcon="avatars:{{selectedUser.avatar}}" class="avatar"></md-icon>
+  <mat-card fxFlex="80">
+    <mat-icon svgIcon="avatars:{{selectedUser.avatar}}" class="avatar"></mat-icon>
     <h2>{{selectedUser.name}}</h2>
     <p>{{selectedUser.details}}</p>
-  </md-card>
+  </mat-card>
 
-  <md-card fxFlex fxLayout="column" fxLayoutGap="14px">
-    <md-slide-toggle [(ngModel)]="selectedUser.isAdmin">Is Admin?</md-slide-toggle>
-    <md-slide-toggle [(ngModel)]="selectedUser.isCool">Is Cool?</md-slide-toggle>
-  </md-card>
+  <mat-card fxFlex fxLayout="column" fxLayoutGap="14px">
+    <mat-slide-toggle [(ngModel)]="selectedUser.isAdmin">Is Admin?</mat-slide-toggle>
+    <mat-slide-toggle [(ngModel)]="selectedUser.isCool">Is Cool?</mat-slide-toggle>
+  </mat-card>
 
 </div>
 

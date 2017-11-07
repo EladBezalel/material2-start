@@ -13,42 +13,42 @@
 
 ### Step #4 Task:
 
-Here you will use the `MdIconRegistry` service provided by Material which allows us to add a namespace for a group of svg's.
+Here you will use the `MatIconRegistry` service provided by Material which allows us to add a namespace for a group of svg's.
 
 
 ###### File: `src/app/app.component.html`
 
 ```html
 ...
-  <md-sidenav mode="side" opened>
+  <mat-sidenav mode="side" opened>
   
-    <md-tab-group>
-      <md-tab label="Users">
-        <md-nav-list>
-          <md-list-item *ngFor="let user of users">
-            <md-icon svgIcon="avatars:{{user.avatar}}" class="avatar"></md-icon>
+    <mat-tab-group>
+      <mat-tab label="Users">
+        <mat-nav-list>
+          <mat-list-item *ngFor="let user of users">
+            <mat-icon matListAvatar svgIcon="avatars:{{user.avatar}}" class="avatar"></mat-icon>
             <span>{{user.name}}</span>
-          </md-list-item>
-        </md-nav-list>
-      </md-tab>
-      <md-tab label="Settings">
+          </mat-list-item>
+        </mat-nav-list>
+      </mat-tab>
+      <mat-tab label="Settings">
         <span>Settings</span>
-      </md-tab>
-    </md-tab-group>
+      </mat-tab>
+    </mat-tab-group>
   
-  </md-sidenav>
+  </mat-sidenav>
 ...
 ```
 
-By using the `addSvgIconSetInNamespace` function we provide a namespace that can be used with `md-icon` 
+By using the `addSvgIconSetInNamespace` function we provide a namespace that can be used with `mat-icon` 
 and the location of that svg group.
-By that, we can have `<md-icon svgIcon="[namespace]:[id]">` and it would look the namespace and the id in it.
+By that, we can have `<mat-icon svgIcon="[namespace]:[id]">` and it would look the namespace and the id in it.
 
 ###### File:  `src/app/app.component.ts`
 
 ```ts
 import {Component} from '@angular/core';
-import {MdIconRegistry} from '@angular/material';
+import {MatIconRegistry} from '@angular/material';
 import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
@@ -75,7 +75,7 @@ export class AppComponent {
     // ...
   ];
 
-  constructor(iconRegistry: MdIconRegistry, sanitizer: DomSanitizer) {
+  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
     // To avoid XSS attacks, the URL needs to be trusted from inside of your application.
     const avatarsSafeUrl = sanitizer.bypassSecurityTrustResourceUrl('./assets/avatars.svg');
 

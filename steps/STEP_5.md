@@ -18,25 +18,25 @@ Let's add *Selected Us*er functionality and show the selected user details in ou
 ###### File:  `src/app/app.component.html`
 
 ```html
-<md-sidenav mode="side" opened>
+<mat-sidenav mode="side" opened>
 
-  <md-tab-group>
-    <md-tab label="Users">
-      <md-nav-list>
-        <md-list-item *ngFor="let user of users" (click)="selectedUser = user">
-          <md-icon svgIcon="avatars:{{user.avatar}}" class="avatar"></md-icon>
+  <mat-tab-group>
+    <mat-tab label="Users">
+      <mat-nav-list>
+        <mat-list-item *ngFor="let user of users" (click)="selectedUser = user">
+          <mat-icon matListAvatar svgIcon="avatars:{{user.avatar}}" class="avatar"></mat-icon>
           <span>{{user.name}}</span>
-        </md-list-item>
-      </md-nav-list>
-    </md-tab>
-    <md-tab label="Settings">
+        </mat-list-item>
+      </mat-nav-list>
+    </mat-tab>
+    <mat-tab label="Settings">
       <span>Settings</span>
-    </md-tab>
-  </md-tab-group>
+    </mat-tab>
+  </mat-tab-group>
 
-</md-sidenav>
+</mat-sidenav>
 <div class="content">
-   <md-icon svgIcon="avatars:{{selectedUser.avatar}}" class="avatar"></md-icon>
+   <mat-icon svgIcon="avatars:{{selectedUser.avatar}}" class="avatar"></mat-icon>
    <h2>{{selectedUser.name}}</h2>
    <p>{{selectedUser.details}}</p>
 </div>
@@ -48,7 +48,7 @@ Let's select the first user from the users list for our initial view state
 
 ```ts
 import {Component} from '@angular/core';
-import {MdIconRegistry} from '@angular/material';
+import {MatIconRegistry} from '@angular/material';
 
 @Component({
   selector: 'app-root',

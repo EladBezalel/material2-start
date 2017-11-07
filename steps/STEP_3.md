@@ -19,22 +19,22 @@ Here you will have a tab group that will contain the users list within a nav-lis
 
 ```html
 ...
-  <md-sidenav mode="side" opened>
+  <mat-sidenav mode="side" opened>
   
-    <md-tab-group>
-      <md-tab label="Users">
-        <md-nav-list>
-          <md-list-item *ngFor="let user of users">
+    <mat-tab-group>
+      <mat-tab label="Users">
+        <mat-nav-list>
+          <mat-list-item *ngFor="let user of users">
             <span>{{user.name}}</span>
-          </md-list-item>
-        </md-nav-list>
-      </md-tab>
-      <md-tab label="Settings">
+          </mat-list-item>
+        </mat-nav-list>
+      </mat-tab>
+      <mat-tab label="Settings">
         <span>Settings</span>
-      </md-tab>
-    </md-tab-group>
+      </mat-tab>
+    </mat-tab-group>
   
-  </md-sidenav>
+  </mat-sidenav>
 ...
 ```
 <img src="https://cloud.githubusercontent.com/assets/6004537/24765471/24c1f7c8-1ab5-11e7-8a7d-555d78dfda59.png" width="50%">
