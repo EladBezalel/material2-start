@@ -1,16 +1,33 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
-import {HttpModule} from '@angular/http';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MaterialModule} from '@angular/material';
-import {FlexLayoutModule} from '@angular/flex-layout';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import {AppComponent} from './app.component';
-import {DialogComponent} from './dialog/dialog.component';
+import { AppComponent } from './app.component';
+import { DialogComponent } from './dialog/dialog.component';
+
+import { FlexLayoutModule } from '@angular/flex-layout';
+
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatDialogModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSlideToggleModule,
+  MatTabsModule,
+  MatToolbarModule
+} from '@angular/material';
 
 import 'hammerjs';
+
 
 @NgModule({
   declarations: [
@@ -20,13 +37,29 @@ import 'hammerjs';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
-    MaterialModule,
-    FlexLayoutModule,
-    BrowserAnimationsModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+
+    // Material
+    MatButtonModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatDialogModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSlideToggleModule,
+    MatTabsModule,
+    MatToolbarModule,
+
+    // Flex-layout
+    FlexLayoutModule
   ],
   providers: [],
   entryComponents: [DialogComponent],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

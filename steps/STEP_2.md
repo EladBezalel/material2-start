@@ -15,9 +15,9 @@
 
 Here we will use the wireframe planning and layout to identify the components and attributes needed.
 
-* Add the `<md-toolbar>`, `<md-sidenav-container>`, `<md-sidenav>` containers
+* Add the `<mat-toolbar>`, `<mat-sidenav-container>`, `<mat-sidenav>` containers
 
-  > **Note:** The `<md-sidenav>` is the container for the Users **master list** view, and for now a simple
+  > **Note:** The `<mat-sidenav>` is the container for the Users **master list** view, and for now a simple
   `<div>` is the container for the User **detail** view.
   
 * Add the **fxLayout** and **fxFlex** attributes to configure the container layouts and sizing aspects
@@ -28,18 +28,20 @@ Here we will use the wireframe planning and layout to identify the components an
 ```html
 <div fxLayout="column" fxFlex>
 
-  <md-toolbar color="primary">
-    <span>Angular Material</span>
-  </md-toolbar>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>Angular Material</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
 
-  <md-sidenav-container fxFlex>
-    <md-sidenav mode="side" opened>
+  <mat-sidenav-container fxFlex>
+    <mat-sidenav mode="side" opened>
       Sidenav
-    </md-sidenav>
+    </mat-sidenav>
     <div class="content">
       Page Content
     </div>
-  </md-sidenav-container>
+  </mat-sidenav-container>
 
 </div>
 ```
@@ -54,7 +56,7 @@ Giving the host element a flex property of `1` to fill height and sidenav a defa
   flex: 1;
 }
 
-md-sidenav {
+mat-sidenav {
   width: 320px;
 }
 ```

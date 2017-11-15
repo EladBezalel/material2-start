@@ -42,36 +42,36 @@ $theme: mat-light-theme($primary, $accent);
 
 Notice that we have a button with `[mdMenuTriggerFor]` attribute that points what menu to open,
 By setting the value `menu` for that attribute, we find an element with that name
-which happens to be `<md-menu #menu>`, and by clicking the trigger element, the menu would be opened
+which happens to be `<mat-menu #menu>`, and by clicking the trigger element, the menu would be opened
 
 ###### File: `src/app/app.component.html`
 
 ```html
 <div fxLayout="column" fxFlex [class.dark-theme]="isDarkTheme">
 
-  <md-toolbar color="primary">
+  <mat-toolbar color="primary">
     <span>Angular Material</span>
 
     <!-- Filler that pushes the menu button to the end of the toolbar -->
     <span fxFlex></span>
 
-    <button md-icon-button [mdMenuTriggerFor]="themeMenu">
-      <md-icon>more_vert</md-icon>
+    <button mat-icon-button [mdMenuTriggerFor]="themeMenu">
+      <mat-icon>more_vert</mat-icon>
     </button>
 
-  </md-toolbar>
+  </mat-toolbar>
 
-  <md-sidenav-container fxFlex fxLayout="row">
+  <mat-sidenav-container fxFlex fxLayout="row">
     ...
-  </md-sidenav-container>
+  </mat-sidenav-container>
   
-  <md-menu #themeMenu x-position="before">
-    <button md-menu-item (click)="isDarkTheme = !isDarkTheme">Toggle Theme</button>
-  </md-menu>
+  <mat-menu #themeMenu x-position="before">
+    <button mat-menu-item (click)="isDarkTheme = !isDarkTheme">Toggle Theme</button>
+  </mat-menu>
 </div>
 ```
 
-Also notice we're using `md-icon` again, but this time we're passing a ligature name that will be resovled out of the Material Icons font that we [imported in the `styles.css`](https://github.com/EladBezalel/material2-start/blob/workshop/src/styles.css#L1), you can see the full list of icons ligatures [here](https://material.io/icons/)
+Also notice we're using `mat-icon` again, but this time we're passing a ligature name that will be resovled out of the Material Icons font that we [imported in the `styles.css`](https://github.com/EladBezalel/material2-start/blob/workshop/src/styles.css#L1), you can see the full list of icons ligatures [here](https://material.io/icons/)
 
 Add a dark theme default value to  `false`
 
@@ -79,7 +79,7 @@ Add a dark theme default value to  `false`
 
 ```ts
 import {Component} from '@angular/core';
-import {MdIconRegistry} from '@angular/material';
+import {MatIconRegistry} from '@angular/material';
 
 @Component({
   selector: 'app-root',

@@ -3,7 +3,7 @@
   flex: 1;
 }
 
-md-sidenav {
+mat-sidenav {
   width: 320px;
 }
 
@@ -11,7 +11,7 @@ md-sidenav {
   padding: 12px;
 }
 
-/deep/ md-icon.avatar {
+/deep/ mat-icon.avatar {
   overflow: hidden;
   width: 64px;
   height: 64px;

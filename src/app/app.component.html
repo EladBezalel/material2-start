@@ -1,57 +1,58 @@
 <div fxLayout="column" fxFlex [class.dark-theme]="isDarkTheme">
 
-  <md-toolbar color="primary">
-    <span>Angular Material</span>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>Angular Material</span>
 
-    <!-- Filler that pushes the menu button to the end of the toolbar -->
-    <span fxFlex></span>
+      <!-- Filler that pushes the menu button to the end of the toolbar -->
+      <span fxFlex></span>
 
-    <button md-icon-button [mdMenuTriggerFor]="themeMenu">
-      <md-icon>more_vert</md-icon>
-    </button>
+      <button mat-icon-button [matMenuTriggerFor]="themeMenu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
 
-  </md-toolbar>
+  <mat-sidenav-container fxFlex>
+    <mat-sidenav mode="side" opened>
 
-  <md-sidenav-container fxFlex>
-    <md-sidenav mode="side" opened>
-
-      <md-tab-group>
-        <md-tab label="Users">
-          <md-nav-list>
-            <md-list-item *ngFor="let user of users" (click)="selectedUser = user">
-              <md-icon svgIcon="avatars:{{user.avatar}}" class="avatar"></md-icon>
+      <mat-tab-group>
+        <mat-tab label="Users">
+          <mat-nav-list>
+            <mat-list-item *ngFor="let user of users" (click)="selectedUser = user">
+              <mat-icon matListAvatar svgIcon="avatars:{{user.avatar}}" class="avatar"></mat-icon>
               <span>{{user.name}}</span>
-            </md-list-item>
-          </md-nav-list>
-        </md-tab>
-        <md-tab label="Settings">
+            </mat-list-item>
+          </mat-nav-list>
+        </mat-tab>
+        <mat-tab label="Settings">
           <span>Settings</span>
-        </md-tab>
-      </md-tab-group>
+        </mat-tab>
+      </mat-tab-group>
 
-    </md-sidenav>
+    </mat-sidenav>
     <div class="content" fxLayout="row" fxLayout.sm="column" fxLayoutGap="16px">
 
-      <md-card fxFlex="80">
-        <md-icon svgIcon="avatars:{{selectedUser.avatar}}" class="avatar"></md-icon>
+      <mat-card fxFlex="80">
+        <mat-icon svgIcon="avatars:{{selectedUser.avatar}}" class="avatar"></mat-icon>
         <h2>{{selectedUser.name}}</h2>
         <p>{{selectedUser.details}}</p>
-      </md-card>
+      </mat-card>
 
-      <md-card fxFlex fxLayout="column" fxLayoutGap="14px">
-        <md-slide-toggle [(ngModel)]="selectedUser.isAdmin">Is Admin?</md-slide-toggle>
-        <md-slide-toggle [(ngModel)]="selectedUser.isCool">Is Cool?</md-slide-toggle>
-      </md-card>
-      
+      <mat-card fxFlex fxLayout="column" fxLayoutGap="14px">
+        <mat-slide-toggle [(ngModel)]="selectedUser.isAdmin">Is Admin?</mat-slide-toggle>
+        <mat-slide-toggle [(ngModel)]="selectedUser.isCool">Is Cool?</mat-slide-toggle>
+      </mat-card>
+
     </div>
-  </md-sidenav-container>
+  </mat-sidenav-container>
 
-  <md-menu #themeMenu x-position="before">
-    <button md-menu-item (click)="isDarkTheme = !isDarkTheme">Toggle Theme</button>
-  </md-menu>
+  <mat-menu #themeMenu x-position="before">
+    <button mat-menu-item (click)="isDarkTheme = !isDarkTheme">Toggle Theme</button>
+  </mat-menu>
 
-  <button md-fab (click)="openAdminDialog()" class="fab-bottom-right">
-    <md-icon>add</md-icon>
+  <button mat-fab (click)="openAdminDialog()" class="fab-bottom-right">
+    <mat-icon>add</mat-icon>
   </button>
 
 </div>
