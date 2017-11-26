@@ -40,7 +40,7 @@ $theme: mat-light-theme($primary, $accent);
 
 ```
 
-Notice that we have a button with `[mdMenuTriggerFor]` attribute that points what menu to open,
+Notice that we have a button with `[matMenuTriggerFor]` attribute that points what menu to open,
 By setting the value `menu` for that attribute, we find an element with that name
 which happens to be `<mat-menu #menu>`, and by clicking the trigger element, the menu would be opened
 
@@ -55,7 +55,7 @@ which happens to be `<mat-menu #menu>`, and by clicking the trigger element, the
     <!-- Filler that pushes the menu button to the end of the toolbar -->
     <span fxFlex></span>
 
-    <button mat-icon-button [mdMenuTriggerFor]="themeMenu">
+    <button mat-icon-button [matMenuTriggerFor]="themeMenu">
       <mat-icon>more_vert</mat-icon>
     </button>
 
