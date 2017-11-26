@@ -30,11 +30,11 @@ Creating a form inside of the Angular Material dialog.
       </mat-form-field>
     </div>
     <mat-form-field>
-      <input mdInput ngModel name="name" placeholder="Full name" required>
+      <input matInput ngModel name="name" placeholder="Full name" required>
     </mat-form-field>
 
     <mat-form-field>
-      <textarea mdInput ngModel name="details" placeholder="Details" rows="15" cols="60" required></textarea>
+      <textarea matInput ngModel name="details" placeholder="Details" rows="15" cols="60" required></textarea>
     </mat-form-field>
 
     <div fxLayout="row" fxLayoutGap="24px">
