@@ -3,28 +3,22 @@
   flex: 1;
 }
 
-mat-sidenav {
-  width: 320px;
+mat-tab-group {
+  height: 100%;
+}
+
+.avatar {
+  overflow: hidden;
+  margin: 12px;
 }
 
 .content {
-  padding: 12px;
-}
-
-/deep/ mat-icon.avatar {
-  overflow: hidden;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  margin: 12px;
+  padding: 14px;
 }
 
 .fab-bottom-right {
   position: fixed;
   right: 16px;
   bottom: 16px;
-}
-
-/deep/ .mat-list-item-content {
-  height: auto !important;
+  z-index: 8;
 }
