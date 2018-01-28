@@ -13,7 +13,7 @@
 
 ### Step #7 Task:
 
-Add themes with the [theming mixins](https://github.com/angular/material2/blob/master/docs/theming.md) provided by Material.
+Add themes with the [theming mixins](https://github.com/angular/material2/blob/master/guides/theming.md) provided by Material.
 
 ###### File: `src/theme.scss`
 
