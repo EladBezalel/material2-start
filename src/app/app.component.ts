@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {MatIconRegistry, MatDialog} from '@angular/material';
 import {DomSanitizer} from '@angular/platform-browser';
 
-import 'rxjs/add/operator/filter';
+import {filter} from 'rxjs/operators/filter';
 
 import {DialogComponent} from './dialog/dialog.component';
 
@@ -87,7 +87,7 @@ export class AppComponent {
 
   openAdminDialog() {
     this.dialog.open(DialogComponent).afterClosed()
-      .filter(result => !!result)
+      .pipe(filter(result => !!result))
       .subscribe(user => {
         this.users.push(user);
         this.selectedUser = user;

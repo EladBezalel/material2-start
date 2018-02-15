@@ -11,7 +11,7 @@ mat-sidenav {
   padding: 12px;
 }
 
-/deep/ mat-icon.avatar {
+mat-icon.avatar {
   overflow: hidden;
   width: 64px;
   height: 64px;
@@ -25,6 +25,6 @@ mat-sidenav {
   bottom: 16px;
 }
 
-/deep/ .mat-list-item-content {
+.mat-list-item-content {
   height: auto !important;
 }

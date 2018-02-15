@@ -39,7 +39,7 @@
         <p>{{selectedUser.details}}</p>
       </mat-card>
 
-      <mat-card fxFlex fxLayout="column" fxLayoutGap="14px">
+      <mat-card fxFlex fxFlex.sm="noshrink" fxLayout="column" fxLayoutGap="14px">
         <mat-slide-toggle [(ngModel)]="selectedUser.isAdmin">Is Admin?</mat-slide-toggle>
         <mat-slide-toggle [(ngModel)]="selectedUser.isCool">Is Cool?</mat-slide-toggle>
       </mat-card>
